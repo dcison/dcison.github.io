@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://dcison.github.io">
-  <title>my first blog | Dcison&#39;s Blog</title>
+  <title>yillia主题的配置 | Dcison&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="hello worldhello hexo">
-<meta name="keywords" content="hello,first">
+  <meta name="description" content="##hexo常用命令12345678$ npm install hexo -g #安装  $ npm update hexo -g #升级$ hexo init #初始化$ hexo n &quot;xxxx&quot; # 新建文章$ hexo p #publish$ hexo clean &amp;amp;&amp;amp; hexo g $ hexo s #启动服务$ hexo d #部署 主要写一些注意点 _config中的">
+<meta name="keywords" content="hexo,主题配置">
 <meta property="og:type" content="article">
-<meta property="og:title" content="my first blog">
+<meta property="og:title" content="yillia主题的配置">
 <meta property="og:url" content="https://dcison.github.io/2017/08/22/blog/index.html">
 <meta property="og:site_name" content="Dcison&#39;s Blog">
-<meta property="og:description" content="hello worldhello hexo">
-<meta property="og:updated_time" content="2017-08-22T08:50:46.023Z">
+<meta property="og:description" content="##hexo常用命令12345678$ npm install hexo -g #安装  $ npm update hexo -g #升级$ hexo init #初始化$ hexo n &quot;xxxx&quot; # 新建文章$ hexo p #publish$ hexo clean &amp;amp;&amp;amp; hexo g $ hexo s #启动服务$ hexo d #部署 主要写一些注意点 _config中的">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-08-22T13:46:14.276Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="my first blog">
-<meta name="twitter:description" content="hello worldhello hexo">
+<meta name="twitter:title" content="yillia主题的配置">
+<meta name="twitter:description" content="##hexo常用命令12345678$ npm install hexo -g #安装  $ npm update hexo -g #升级$ hexo init #初始化$ hexo n &quot;xxxx&quot; # 新建文章$ hexo p #publish$ hexo clean &amp;amp;&amp;amp; hexo g $ hexo s #启动服务$ hexo d #部署 主要写一些注意点 _config中的">
   
     <link rel="alternative" href="/atom.xml" title="Dcison&#39;s Blog" type="application/atom+xml">
   
@@ -61,7 +62,7 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/随笔">随笔</a></li>
+				<li><a href="/categories/随笔">随笔</a></li>
 	        
 			</ul>
 		</nav>
@@ -135,7 +136,7 @@
 				
 					<li style="width: 50%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/tags/随笔">随笔</a></li>
+					<li style="width: 50%"><a href="/categories/随笔">随笔</a></li>
 		        
 				</ul>
 			</nav>
@@ -150,14 +151,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="&#39;me-blog" class="article article-type-&#39;me " itemscope itemprop="blogPost">
+            <article id="post-blog" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      my first blog
+      yillia主题的配置
     </h1>
   
 
@@ -170,8 +171,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>hello world<br>hello hexo</p>
-
+        <p>##hexo常用命令<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo -g <span class="comment">#安装  </span></div><div class="line">$ npm update hexo -g <span class="comment">#升级</span></div><div class="line">$ hexo init <span class="comment">#初始化</span></div><div class="line">$ hexo n <span class="string">"xxxx"</span> <span class="comment"># 新建文章</span></div><div class="line">$ hexo p <span class="comment">#publish</span></div><div class="line">$ hexo clean &amp;&amp; hexo g </div><div class="line">$ hexo s <span class="comment">#启动服务</span></div><div class="line">$ hexo d <span class="comment">#部署</span></div></pre></td></tr></table></figure></p>
+<h2 id="主要写一些注意点"><a href="#主要写一些注意点" class="headerlink" title="主要写一些注意点"></a>主要写一些注意点</h2><ul>
+<li>_config中的menu：</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="attr">menu:</span></div><div class="line">  <span class="string">主页:</span> <span class="string">/</span></div><div class="line">  <span class="string">随笔:</span> <span class="string">/categories/随笔</span></div><div class="line"><span class="attr">  XXX:</span> <span class="string">/categories/XXX</span> <span class="string">会自动归档分类</span></div></pre></td></tr></table></figure>
+<p>只要用hexo n “x” #新建文章,在文章里如下写</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">---</div><div class="line">title: XXX</div><div class="line">date: 2017-08-22 20:46:19</div><div class="line">tags: [tag1,tag2,...]</div><div class="line">categories: 随笔 //对应归档的名字</div><div class="line">---</div><div class="line">文章正文XXX</div></pre></td></tr></table></figure>
       
 
       
@@ -184,11 +190,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">hello</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">first</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">主题配置</a>
         		</li>
       		
 		</ul>
@@ -258,11 +264,15 @@
   
 <nav id="article-nav">
   
-  
-    <a href="/2017/08/22/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hello World</div>
-      <i class="icon-circle-right"></i>
+    <a href="/2017/08/22/first/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          第一篇随笔
+        
+      </div>
     </a>
+  
   
 </nav>
 
@@ -395,11 +405,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">hello</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">first</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">主题配置</a>
               </li>
             
             <div class="clearfix"></div>
