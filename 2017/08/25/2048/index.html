@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://dcison.github.io">
-  <title>Tag: 微信小程序 | Dcison&#39;s Blog</title>
+  <title>2048 | Dcison&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="求求dalao教我敲代码吧">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dcison&#39;s Blog">
-<meta property="og:url" content="https://dcison.github.io/tags/微信小程序/index.html">
+  <meta name="description" content="用React编写2048原创文章,转载请著名,谢谢Thanks♪(･ω･)ﾉ  准备工作 需要一个搭配好的脚手架,这里我放上我用的☞Go 在这脚手架上还用了Pubsub.Js (纯属好玩,可以不需要安装,但是代码得自己改改) 移动端用到了jquery.swipe.js,等会说">
+<meta name="keywords" content="2048,react,移动端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="2048">
+<meta property="og:url" content="https://dcison.github.io/2017/08/25/2048/index.html">
 <meta property="og:site_name" content="Dcison&#39;s Blog">
-<meta property="og:description" content="求求dalao教我敲代码吧">
+<meta property="og:description" content="用React编写2048原创文章,转载请著名,谢谢Thanks♪(･ω･)ﾉ  准备工作 需要一个搭配好的脚手架,这里我放上我用的☞Go 在这脚手架上还用了Pubsub.Js (纯属好玩,可以不需要安装,但是代码得自己改改) 移动端用到了jquery.swipe.js,等会说">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/006m1w1Agy1fiw0ouba63j30n80or74d.jpg">
+<meta property="og:updated_time" content="2017-08-25T09:08:25.811Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dcison&#39;s Blog">
-<meta name="twitter:description" content="求求dalao教我敲代码吧">
+<meta name="twitter:title" content="2048">
+<meta name="twitter:description" content="用React编写2048原创文章,转载请著名,谢谢Thanks♪(･ω･)ﾉ  准备工作 需要一个搭配好的脚手架,这里我放上我用的☞Go 在这脚手架上还用了Pubsub.Js (纯属好玩,可以不需要安装,但是代码得自己改改) 移动端用到了jquery.swipe.js,等会说">
+<meta name="twitter:image" content="http://wx3.sinaimg.cn/mw690/006m1w1Agy1fiw0ouba63j30n80or74d.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Dcison&#39;s Blog" type="application/atom+xml">
   
@@ -155,136 +159,224 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-2048" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/23/踩坑经历/" class="archive-article-date">
-  	<time datetime="2017-08-23T07:05:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-23</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/23/踩坑经历/">踩坑经历</a>
+    <h1 class="article-title" itemprop="name">
+      2048
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/08/25/2048/" class="archive-article-date">
+  	<time datetime="2017-08-25T06:54:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="用React编写2048"><a href="#用React编写2048" class="headerlink" title="用React编写2048"></a>用React编写2048</h1><p><strong>原创文章,转载请著名,谢谢Thanks♪(･ω･)ﾉ<strong></strong></strong></p>
+<hr>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ol>
+<li>需要一个搭配好的脚手架,这里我放上我用的<big>☞</big><a href="https://coding.net/u/Dcison/p/webpack/git" target="_blank" rel="external">Go</a></li>
+<li>在这脚手架上还用了Pubsub.Js (纯属好玩,可以不需要安装,但是代码得自己改改)</li>
+<li>移动端用到了jquery.swipe.js,等会说</li>
+</ol>
+<hr>
+<a id="more"></a>
+<h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><ul>
+<li>2048(根目录)<ul>
+<li>build (最后打包完成的文件目录)</li>
+<li>src (主要编写代码的地方)<ul>
+<li>main.js (打包入口的文件)</li>
+<li>jquery.swipe.js (用于移动端)</li>
+<li>components (组件目录)<ul>
+<li>assets (静态资源目录，放的是less)<ul>
+<li>app.less</li>
+</ul>
+</li>
+<li>js <ul>
+<li><strong>app.js<strong> (我们主要代码的文件)</strong></strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>index_tpl.html (html模板)</li>
+<li>。。。(剩下的就省略不说了,是webpack相关的知识了)</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="main-js-入口文件的代码"><a href="#main-js-入口文件的代码" class="headerlink" title="main.js(入口文件的代码)"></a>main.js(入口文件的代码)</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./components/js/app'</span>;</div><div class="line"><span class="keyword">import</span> Pubsub <span class="keyword">from</span> <span class="string">'pubsub-js'</span>;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  componentDidMount()&#123;</div><div class="line">    Pubsub.subscribe(<span class="string">'WIN'</span>, () =&gt; &#123;</div><div class="line">      alert(<span class="string">"你赢了"</span>);</div><div class="line">      location.reload();</div><div class="line">    &#125;);</div><div class="line">    Pubsub.subscribe(<span class="string">'OVER'</span>, () =&gt; &#123;</div><div class="line">      alert(<span class="string">"你输了"</span>);</div><div class="line">      location.reload();</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">  componentWillUnmount()&#123;</div><div class="line">    Pubsub.unsubscribe(<span class="string">'WIN'</span>);    </div><div class="line">    Pubsub.unsubscribe(<span class="string">'OVER'</span>);    </div><div class="line">  &#125;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;App/&gt;</div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line">ReactDom.render(&lt;Main /&gt;, document.getElementById('app'));</div></pre></td></tr></table></figure>
+<p>首先就是引入该引入的文件，然后用ReactDom渲染，都是React常识了<br>说一下Pubsub,这里接受子组件传来的消息:1. win 2. game over,然后分别处理(其实就是弹窗( :3 )),然后强制刷新。可以不用Pubsub,直接在APP的组件里处理胜负。</p>
+<hr>
+<h2 id="app-js-重头戏"><a href="#app-js-重头戏" class="headerlink" title="app.js (重头戏)"></a>app.js (重头戏)</h2><p>首先分析下2048需要什么功能:</p>
+<ol>
+<li>首要的肯定是渲染出界面吧(4*4个格子)</li>
+<li>能玩!(上下左右移动/触摸移动格子)</li>
+<li>分数展示</li>
+<li>能判断胜负<h3 id="第一个功能"><a href="#第一个功能" class="headerlink" title="第一个功能"></a>第一个功能</h3>标题，分数展示就不说了，主要讲如何创建16个格子，而且随机初始化两个格子位置<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> <span class="string">'../assets/app.less'</span>;</div><div class="line"><span class="keyword">import</span> Pubsub <span class="keyword">from</span> <span class="string">'pubsub-js'</span>;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props) &#123;</div><div class="line">        <span class="keyword">super</span>(props);</div><div class="line">        <span class="keyword">this</span>.state = &#123;</div><div class="line">            score: <span class="number">0</span>, <span class="comment">//初始分数为0</span></div><div class="line">            arr: [], <span class="comment">//放16个格子的数组</span></div><div class="line">            moveable: <span class="literal">false</span> <span class="comment">//格子是否可以移动,后面说</span></div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">let</span> mes;</div><div class="line">        mes = <span class="keyword">this</span>.state.arr.map(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</div><div class="line">            <span class="keyword">return</span> (</div><div class="line">                item.map(<span class="function">(<span class="params">i</span>) =&gt;</span> &#123;</div><div class="line">                    <span class="keyword">return</span> (</div><div class="line">                        &lt;div className=&#123;<span class="string">`game-item-<span class="subst">$&#123;i&#125;</span>`</span>&#125; id=<span class="string">"phone"</span> &gt;</div><div class="line">                            &#123;<span class="string">`<span class="subst">$&#123;i &gt; <span class="number">0</span> ? i : <span class="string">""</span>&#125;</span>`</span>&#125;</div><div class="line">                        &lt;<span class="regexp">/div&gt;)</span></div><div class="line"><span class="regexp">                &#125;)</span></div><div class="line"><span class="regexp">            )</span></div><div class="line"><span class="regexp">        &#125;)</span></div><div class="line"><span class="regexp">        return (</span></div><div class="line"><span class="regexp">            &lt;div&gt;</span></div><div class="line"><span class="regexp">                &lt;div className="title"&gt;2048&lt;/</span>div&gt;</div><div class="line">                &lt;div&gt;Score: &lt;span className="score"&gt;&#123;this.state.score&#125;&lt;/span&gt;&lt;/div&gt;</div><div class="line">                &lt;div className=<span class="string">"game-box"</span>&gt;</div><div class="line">                    &#123;mes&#125;</div><div class="line">                &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">            &lt;/</span>div&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>首先是render渲染title:2048、分数:score,score值绑定里state里的score,然后是mes: 16格子,因为长就把他提出来放return上面了,主要就是用map遍历二维数组,得到里面的值,将里面的值&gt;0的格子渲染出来，并且用ES6模板语言,设置了classname随格子的值变化,就不用在每次移动格子之后去操作css了<br>然后是初始化<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">componentWillMount() &#123;</div><div class="line">        <span class="keyword">this</span>.initRandom();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>调用随机生成函数生成2组不同的下标，传给真正的初始化函数init<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">init(i1, i2, j1, j2) &#123;</div><div class="line">        <span class="keyword">var</span> i, j, array = [];</div><div class="line">        <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</div><div class="line">            array[i] = [];</div><div class="line">            <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++) &#123;</div><div class="line">                array[i][j] = <span class="number">0</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="comment">//80%初始为2,20%为4</span></div><div class="line">        <span class="keyword">if</span>(<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">10</span>)&gt;<span class="number">8</span>)&#123;</div><div class="line">            array[i1][j1] = <span class="number">4</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            array[i1][j1] = <span class="number">2</span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">if</span>(<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * <span class="number">10</span>)&gt;<span class="number">8</span>)&#123;</div><div class="line">            array[i2][j2] = <span class="number">4</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            array[i2][j2] = <span class="number">2</span>;</div><div class="line">        &#125;        </div><div class="line">        <span class="keyword">this</span>.setState(&#123;</div><div class="line">            arr: array</div><div class="line">        &#125;);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>一开始就先创建16个空格子(值都为0),然后用随机数，随机生成4或者2，这里用8:2的概率,然后用initRandom传来的随机两组下标赋值，这样我们的展示页应该就好了<br><img src="http://wx3.sinaimg.cn/mw690/006m1w1Agy1fiw0ouba63j30n80or74d.jpg" alt="页面"><br>当然这里页面是写过less了</p>
+<h3 id="第二个功能"><a href="#第二个功能" class="headerlink" title="第二个功能"></a>第二个功能</h3><p>能玩就是能移动格子,这里我用到的是<a href="http://blog.csdn.net/liusaint1992/article/details/51549596" target="_blank" rel="external">liusaint1992</a>的方法<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line">keyboardMonitor(e) &#123;</div><div class="line">    <span class="keyword">switch</span> (e.keyCode) &#123;</div><div class="line">        <span class="keyword">case</span> <span class="number">38</span>:<span class="comment">//上</span></div><div class="line">            <span class="keyword">this</span>.setState(&#123;</div><div class="line">                moveable: <span class="literal">false</span></div><div class="line">            &#125;)</div><div class="line">            <span class="keyword">this</span>.moveUp();</div><div class="line">            <span class="keyword">this</span>.checkLose();</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="number">39</span>:<span class="comment">//右</span></div><div class="line">            <span class="keyword">this</span>.setState(&#123;</div><div class="line">                moveable: <span class="literal">false</span></div><div class="line">            &#125;)</div><div class="line">            <span class="keyword">this</span>.moveRight();</div><div class="line">            <span class="keyword">this</span>.checkLose();</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="number">40</span>:<span class="comment">//下</span></div><div class="line">            <span class="keyword">this</span>.setState(&#123;</div><div class="line">                moveable: <span class="literal">false</span></div><div class="line">            &#125;)</div><div class="line">            <span class="keyword">this</span>.moveDown();</div><div class="line">            <span class="keyword">this</span>.checkLose();</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">case</span> <span class="number">37</span>:<span class="comment">//左</span></div><div class="line">            <span class="keyword">this</span>.setState(&#123;</div><div class="line">                moveable: <span class="literal">false</span></div><div class="line">            &#125;)</div><div class="line">            <span class="keyword">this</span>.moveLeft();</div><div class="line">            <span class="keyword">this</span>.checkLose();</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">        <span class="keyword">default</span>:</div><div class="line">            <span class="keyword">break</span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">componentDidMount() &#123;</div><div class="line">    <span class="keyword">let</span> that = <span class="keyword">this</span></div><div class="line">    <span class="built_in">document</span>.addEventListener(<span class="string">'keyup'</span>, that.keyboardMonitor.bind(that))</div><div class="line">&#125;</div><div class="line">componentWillUnmount() &#123;</div><div class="line">    <span class="built_in">document</span>.removeEventListener(<span class="string">'keyup'</span>, <span class="keyword">this</span>.keyboardMonitor.bind(<span class="keyword">this</span>))</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>首先在componentDidMount()里绑定键盘事件–交给keyboardMonitor这个函数去完成,这里绑定后面一定要加bind(that) 否则获取不到键盘事件<br>keyboardMonitor函数就简单了,判断你动了键盘的什么键(e.keyCode里)然后分别调用函数就好了<br>接下来讲<strong>移动方法</strong>(算是核心算法了吧)<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line">moveLeft() &#123;</div><div class="line">       <span class="keyword">var</span> i, j, k, n, array = <span class="keyword">this</span>.state.arr;</div><div class="line">       <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</div><div class="line">           n = <span class="number">0</span>;</div><div class="line">           <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++) &#123;</div><div class="line">               <span class="keyword">if</span> (array[i][j] != <span class="number">0</span>) &#123;</div><div class="line">                   k = j - <span class="number">1</span>;</div><div class="line">                   <span class="keyword">while</span> (k &gt;= n) &#123;</div><div class="line">                       <span class="keyword">if</span> (array[i][k] == <span class="number">0</span>) &#123;</div><div class="line">                           <span class="keyword">if</span> (k == n || (array[i][k - <span class="number">1</span>] != <span class="number">0</span> &amp;&amp; array[i][k - <span class="number">1</span>] != array[i][j])) &#123;</div><div class="line">                               array[i][k] = array[i][j];</div><div class="line">                               array[i][j] = <span class="number">0</span>;</div><div class="line">                               <span class="keyword">this</span>.setState(&#123;</div><div class="line">                                   moveable: <span class="literal">true</span></div><div class="line">                               &#125;)</div><div class="line">                           &#125;</div><div class="line">                           k--;</div><div class="line">                       &#125; <span class="keyword">else</span> &#123;</div><div class="line">                           <span class="keyword">if</span> (array[i][k] == array[i][j]) &#123;</div><div class="line">                               n++;</div><div class="line">                               <span class="keyword">var</span> temp = array[i][k] * <span class="number">2</span>;</div><div class="line">                               array[i][k] = temp;</div><div class="line">                               <span class="keyword">if</span> (temp == <span class="number">2048</span>) &#123; Pubsub.publish(<span class="string">"WIN"</span>); &#125;</div><div class="line">                               array[i][j] = <span class="number">0</span>;</div><div class="line">                               <span class="keyword">this</span>.setState(&#123;</div><div class="line">                                   moveable: <span class="literal">true</span>,</div><div class="line">                                   score: <span class="keyword">this</span>.state.score += temp</div><div class="line">                               &#125;);</div><div class="line">                           &#125;</div><div class="line">                           <span class="keyword">break</span>;</div><div class="line">                       &#125;</div><div class="line">                   &#125;</div><div class="line">               &#125;</div><div class="line">           &#125;</div><div class="line">       &#125;</div><div class="line">       <span class="keyword">if</span>(<span class="keyword">this</span>.state.moveable)&#123;</div><div class="line">           <span class="keyword">this</span>.setState(&#123;</div><div class="line">               arr: array</div><div class="line">           &#125;)</div><div class="line">           <span class="keyword">this</span>.newCell();</div><div class="line">       &#125;       </div><div class="line">       </div><div class="line">   &#125;</div></pre></td></tr></table></figure></p>
+<p>以左移为例,思路是把一行取出来,然后从左往右遍历我们格子的数组,当碰上不为0的数(<figure class="highlight plain"><figcaption><span>(array[i][j] != 0)```),对它进行操作:</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">* n 表示的是最左边可以到达的位置</div><div class="line">* 从它的前一位( k = j - 1; )遍历</div><div class="line">* 先说如果它的前一位不是0,那好办,判断它们是不是相等,相等则合并,然后n+1,合并代码自己看吧,很简单的,合并后判断合并后的值是不是2048,即是否胜利,如果不是则更新分数、移动的标记</div><div class="line">* 如果是0,再判断它不是可以到达的最左边(左移嘛，当然是最左边),通过n和k之间的比较 and 要移动项和&lt;strong&gt;k项的前一项&lt;/strong&gt;比较</div><div class="line">* 比较完后通过判断移动的标记,移动过了就表示数组肯定要更新,要生成新的格子</div><div class="line">### 生成格子</div><div class="line">``` javascript</div><div class="line">newCell() &#123;</div><div class="line">        var i, j, array = this.state.arr,index=[],temp;</div><div class="line">        //生成格子前遍历是否还有空格子</div><div class="line">        for (i = 0; i &lt; 4; i++) &#123;</div><div class="line">            for (j = 0; j &lt; 4; j++) &#123;</div><div class="line">                if (array[i][j] == 0) &#123;</div><div class="line">                    index.push([i,j]);</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        //如果还有空格子就证明游戏没有结束</div><div class="line">        if (index.length&gt;0) &#123;</div><div class="line">            temp = Math.floor(Math.random() * index.length );</div><div class="line">            i = index[temp][0];</div><div class="line">            j = index[temp][1];</div><div class="line">            if(Math.floor(Math.random() * 10)&gt;8)&#123;</div><div class="line">                array[i][j] = 4;</div><div class="line">            &#125;else&#123;</div><div class="line">                array[i][j] = 2;</div><div class="line">            &#125;             </div><div class="line">            this.setState(&#123;</div><div class="line">                arr: array</div><div class="line">            &#125;);</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>这个就不说了,有注释应该能看懂了<br>然后就是判断胜负的函数</p>
+<h3 id="胜负判断"><a href="#胜负判断" class="headerlink" title="胜负判断"></a>胜负判断</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">checkLose() &#123;</div><div class="line">    <span class="keyword">var</span> i, j, temp, array = <span class="keyword">this</span>.state.arr;</div><div class="line">    <span class="keyword">for</span> (i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++) &#123;</div><div class="line">        <span class="keyword">for</span> (j = <span class="number">0</span>; j &lt; <span class="number">4</span>; j++) &#123;</div><div class="line">            temp = array[i][j];</div><div class="line">            <span class="keyword">if</span> (temp == <span class="number">0</span>) &#123;</div><div class="line">                <span class="keyword">return</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span> ((array[i + <span class="number">1</span>] != <span class="literal">undefined</span>) &amp;&amp; (array[i + <span class="number">1</span>][j] == temp)) &#123;</div><div class="line">                <span class="keyword">return</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span> ((array[i][j + <span class="number">1</span>] != <span class="literal">undefined</span>) &amp;&amp; (array[i][j + <span class="number">1</span>] == temp)) &#123;</div><div class="line">                <span class="keyword">return</span>;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    PubSub.publish(<span class="string">"OVER"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>以下分别对应各个if条件</p>
+<ul>
+<li>只要还有空格子就没输</li>
+<li>相邻<strong>列</strong>的行之间只要还有相同的就没输</li>
+<li>相邻<strong>行</strong>的列之间只要还有相同的就没输<br>至于第二个条件为什么不写array[i + 1][j] != undefined因为此时array[i+1]为定义,直接用array[i+1][j]判断是会报错的</li>
+</ul>
+<h3 id="添加移动端功能"><a href="#添加移动端功能" class="headerlink" title="添加移动端功能"></a>添加移动端功能</h3><p>这里我用到的是<a href="http://blog.csdn.net/pvfhv/article/details/3449803" target="_blank" rel="external">老白干</a>独立出来的jquery.swipe.js<br>用法:</p>
+<ul>
+<li>在html_tpl里引用jquery  <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span> = <span class="string">"app"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span>   </div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"https://cdn.bootcss.com/jquery/2.1.1/jquery.min.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在webpack入口里引入jquery.swipe.js,更改一下入口配置<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">entry: &#123;</div><div class="line">        index: [           </div><div class="line">            path.resolve(__dirname,<span class="string">'./src/jquery.swipe.js'</span>),</div><div class="line">            path.resolve(__dirname, <span class="string">'./src/main.js'</span>)</div><div class="line">        ]        </div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
+<p>至此,jquery.swipe.js需要的环境就配好了,用法:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line">componentDidMount() &#123;</div><div class="line">        <span class="keyword">let</span> that = <span class="keyword">this</span>;</div><div class="line">        $(<span class="string">'body'</span>).swipe(&#123;</div><div class="line">            left: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                that.setState(&#123;</div><div class="line">                    moveable: <span class="literal">false</span></div><div class="line">                &#125;)</div><div class="line">                that.moveLeft();</div><div class="line">                that.checkLose();</div><div class="line">            &#125;,</div><div class="line">            right: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                that.setState(&#123;</div><div class="line">                    moveable: <span class="literal">false</span></div><div class="line">                &#125;)</div><div class="line">                that.moveRight();</div><div class="line">                that.checkLose();</div><div class="line">            &#125;,</div><div class="line">            up: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                that.setState(&#123;</div><div class="line">                    moveable: <span class="literal">false</span></div><div class="line">                &#125;)</div><div class="line">                that.moveUp();</div><div class="line">                that.checkLose();</div><div class="line">            &#125;,</div><div class="line">            down: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">                that.setState(&#123;</div><div class="line">                    moveable: <span class="literal">false</span></div><div class="line">                &#125;)</div><div class="line">                that.moveDown();</div><div class="line">                that.checkLose();</div><div class="line">            &#125;</div><div class="line">        &#125;);</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>有了键盘监听的经验,这里应该就不难了</p>
+<hr>
+<h3 id="结束语"><a href="#结束语" class="headerlink" title="结束语"></a>结束语</h3><p>本文参考的主要核心写法是用了<a href="http://blog.csdn.net/liusaint1992/article/details/51549596" target="_blank" rel="external">liusaint1992</a><br>然后放上项目地址:</p>
+<ul>
+<li><a href="https://dcison.coding.me/2048Game/" target="_blank" rel="external">PlayGame</a></li>
+<li><a href="https://coding.net/u/Dcison/p/2048Game/git" target="_blank" rel="external">Coding地址</a></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">2048</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CSS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">react</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/笔记/" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
+      
 
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://dcison.github.io/2017/08/25/2048/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/23/mark/" class="archive-article-date">
-  	<time datetime="2017-08-23T06:49:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-23</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/23/踩坑经历/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">踩坑经历</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/23/mark/">常用快捷键</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">微信小程序</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">快捷键</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">vscode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/笔记/" class="article-tag-list-link color3">笔记</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -307,9 +399,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
