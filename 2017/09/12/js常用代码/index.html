@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://dcison.github.io">
-  <title>Tag: 面试 | Dcison&#39;s Blog</title>
+  <title>js常用代码 | Dcison&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="求求dalao教我敲代码吧">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dcison&#39;s Blog">
-<meta property="og:url" content="https://dcison.github.io/tags/面试/index.html">
+  <meta name="description" content="笔记来源 js删除节点 IE下removeNode() 别的removeChild()sort方法排序只能对数组使用编码 stringObject.charCodeAt(index),index是字符在字符串中的下标刷新 location.reload([bForceGet]) ,[bForceGet]默认值是false,表示从客户端缓存里取当前页。设置为true, 则以GET方式,从服务端取最新">
+<meta name="keywords" content="javascript,笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js常用代码">
+<meta property="og:url" content="https://dcison.github.io/2017/09/12/js常用代码/index.html">
 <meta property="og:site_name" content="Dcison&#39;s Blog">
-<meta property="og:description" content="求求dalao教我敲代码吧">
+<meta property="og:description" content="笔记来源 js删除节点 IE下removeNode() 别的removeChild()sort方法排序只能对数组使用编码 stringObject.charCodeAt(index),index是字符在字符串中的下标刷新 location.reload([bForceGet]) ,[bForceGet]默认值是false,表示从客户端缓存里取当前页。设置为true, 则以GET方式,从服务端取最新">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-09-12T15:51:28.763Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dcison&#39;s Blog">
-<meta name="twitter:description" content="求求dalao教我敲代码吧">
+<meta name="twitter:title" content="js常用代码">
+<meta name="twitter:description" content="笔记来源 js删除节点 IE下removeNode() 别的removeChild()sort方法排序只能对数组使用编码 stringObject.charCodeAt(index),index是字符在字符串中的下标刷新 location.reload([bForceGet]) ,[bForceGet]默认值是false,表示从客户端缓存里取当前页。设置为true, 则以GET方式,从服务端取最新">
   
     <link rel="alternative" href="/atom.xml" title="Dcison&#39;s Blog" type="application/atom+xml">
   
@@ -159,71 +161,213 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-js常用代码" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/09/07/第一次面试/" class="archive-article-date">
-  	<time datetime="2017-09-07T15:02:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-07</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/07/第一次面试/">第一次面试</a>
+    <h1 class="article-title" itemprop="name">
+      js常用代码
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/09/12/js常用代码/" class="archive-article-date">
+  	<time datetime="2017-09-12T13:46:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-09-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://segmentfault.com/a/1190000008632671" target="_blank" rel="external">笔记来源</a></p>
+<h3 id="js删除节点"><a href="#js删除节点" class="headerlink" title="js删除节点"></a>js删除节点</h3><ul>
+<li>IE下removeNode()</li>
+<li>别的removeChild()<h3 id="sort方法排序"><a href="#sort方法排序" class="headerlink" title="sort方法排序"></a>sort方法排序</h3>只能对数组使用<h3 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h3></li>
+<li>stringObject.charCodeAt(index),index是字符在字符串中的下标<h3 id="刷新"><a href="#刷新" class="headerlink" title="刷新"></a>刷新</h3></li>
+<li>location.reload([bForceGet]) ,[bForceGet]默认值是false,表示从客户端缓存里取当前页。设置为true, 则以GET方式,从服务端取最新的页面, 相当于客户端按了F5键</li>
+<li>location.replace(URL),通过指定URL替换当前缓存在历史里（客户端）的项目,因此不能通过<strong>前进</strong>和<strong>后退</strong>来访问已经被替换的URL。</li>
+<li>history.go(0) 推荐<h3 id="检查数值"><a href="#检查数值" class="headerlink" title="检查数值"></a>检查数值</h3>isFinite(NUM) NUM放要检测的对象,是数值返回true<h3 id="parseInt-string-num-num"><a href="#parseInt-string-num-num" class="headerlink" title="parseInt(string/num,num)"></a>parseInt(string/num,num)</h3></li>
+<li>如果字符串的第一个字符不能转化为数字(后面跟着数字的正负号除外),返回NaN,别的会把其中的数字转换</li>
+<li>第二个参数默认是10,表示进制转换,范围是2-36</li>
+<li>如果第二个参数不是数值,会被自动转为一个整数。这个整数只有在2到36之间,才能得到有意义的结果,超出这个范围,则返回NaN。如果第二个参数是0、undefined和null,则直接忽略。</li>
+<li>如果字符串包含对于指定进制无意义的字符,则从最高位开始,只返回可以转换的数值。如果最高位无法转换,则直接返回NaN。<h3 id="parseFloat"><a href="#parseFloat" class="headerlink" title="parseFloat()"></a>parseFloat()</h3></li>
+<li>parseFloat方法会自动过滤字符串前导的空格</li>
+<li>parseFloat会将空字符串转为NaN<h3 id="charAt"><a href="#charAt" class="headerlink" title="charAt()"></a>charAt()</h3>string.charAt(index) 返回string里面index的字符<h3 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h3>arrayObject.join(separator) 将数组里面值用separator作为分隔符连接成一串字符串,跟python一样<h3 id="split"><a href="#split" class="headerlink" title="split()"></a>split()</h3>stringObject.split(separator,howmany)</li>
+<li>separator:必需。字符串或正则表达式,从该参数指定的地方分割 stringObject。</li>
+<li>howmany:可选。该参数可指定返回的数组的最大长度。如果设置了该参数,返回的子串不会多于这个参数指定的数组。如果没有设置该参数,整个字符串都会被分割,不考虑它的长度。<h3 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf()"></a>indexOf()</h3>stringObject.indexOf(searchvalue,fromindex)</li>
+<li>searchvalue:必需。规定需检索的字符串值。</li>
+<li>fromindex:可选的整数参数。规定在字符串中开始检索的位置。它的合法取值是 0 到 stringObject.length - 1。如省略该参数,则将从字符串的首字符开始检索。</li>
+<li>indexOf() 方法对大小写敏感！ <h3 id="lastIndexOf"><a href="#lastIndexOf" class="headerlink" title="lastIndexOf()"></a>lastIndexOf()</h3>stringObject.lastIndexOf(searchvalue,fromindex)</li>
+<li>searchvalue:必需。规定需检索的字符串值。</li>
+<li>fromindex:可选的整数参数。规定在字符串中开始检索的位置。它的合法取值是 0 到 stringObject.length - 1。如省略该参数,则将从字符串的最后一个字符处开始检索。<h3 id="call"><a href="#call" class="headerlink" title="call()"></a>call()</h3>obj1.method1.call(obj2,argument1,argument2)<h3 id="substring"><a href="#substring" class="headerlink" title="substring()"></a>substring()</h3>stringObject.substring(start,stop)</li>
+<li>start:必需。一个非负的整数,规定要提取的子串的第一个字符在 stringObject中的位置。</li>
+<li>stop:可选。一个非负的整数,比要提取的子串的最后一个字符在 stringObject中的位置多1。如果省略该参数,那么返回的子串会一直到字符串的结尾。</li>
+<li>返回值:一个新的字符串,该字符串值包含stringObject的一个子字符串,其内容是从start处到stop-1处的所有字符,其长度为 stop 减 start。<h3 id="toString-NaN"><a href="#toString-NaN" class="headerlink" title="toString()"></a>toString()</h3></li>
+<li>Array.toString():将数组转换成一个字符串,并且返回这个字符串。</li>
+<li>Boolean.toString():将布尔值转换为字符串。(true/false)</li>
+<li>Date.toString():将Date对象转换成一个字符串,采用本地时间。</li>
+<li>Error.toString():将Error对象转换成字符串</li>
+<li>Function.toString():把函数转换成字符串</li>
+<li>Number.toString(num):将数字转换为字符串。num指定的基数或底数(底数范围为2-36)。如果省略参数,则使用基数10。当参数值为2时,返回二进制数。<h3 id="fromCharCode"><a href="#fromCharCode" class="headerlink" title="fromCharCode()"></a>fromCharCode()</h3>String.fromCharCode(numX,numX,…,numX)<br>numX：必需。一个或多个 Unicode 值,即要创建的字符串中的字符的 Unicode 编码。<h3 id="substr"><a href="#substr" class="headerlink" title="substr()"></a>substr()</h3>stringObject.substr(start,length)</li>
+<li>start:必需。要抽取的子串的起始下标。必须是数值。如果是负数,那么该参数声明从字符串的尾部开始算起的位置。也就是说,-1 指字符串中最后一个字符,-2 指倒数第二个字符,以此类推。</li>
+<li>length:可选。子串中的字符数。必须是数值。如果省略了该参数,那么返回从 stringObject 的开始位置到结尾的字串。</li>
+<li>substr() 的参数指定的是子串的开始位置和长度,因此它可以替代 substring() 和 slice() 来使用。</li>
+<li>ECMAscript 没有对该方法进行标准化,因此反对使用它。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/随笔/" class="article-tag-list-link color3">随笔</a>
+        			<a href="/categories/笔记/" class="article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://dcison.github.io/2017/09/12/js常用代码/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2017/09/11/元素居中方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">元素居中方法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <div id="box"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'dcison',
+  repo: 'dcison.github.io',
+  oauth: {
+    client_id: 'c41146547899a6b3805a',
+    client_secret: '88b444539c7c8c9360579e464c8f474527537864',
+  },
+})
+gitment.render('box')
+</script>
+  
+  
+  
+  
   
 
-    
+  
+
+  
+
+  
+
 
 
           </div>
@@ -246,9 +390,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

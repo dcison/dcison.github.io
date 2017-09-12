@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Dcison&#39;s Blog">
 <meta property="og:description" content="记录下常用的居中方法:来源">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-11T16:00:52.038Z">
+<meta property="og:updated_time" content="2017-09-12T15:13:27.286Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="元素居中方法">
 <meta name="twitter:description" content="记录下常用的居中方法:来源">
@@ -190,6 +190,8 @@
 <h4 id="display-flex-新主流"><a href="#display-flex-新主流" class="headerlink" title="display:flex 新主流"></a>display:flex 新主流</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.center</span> &#123;    </div><div class="line">    <span class="attribute">display</span>: flex;</div><div class="line">    <span class="attribute">justify-content</span>: center;</div><div class="line">    <span class="attribute">align-items</span>: center;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>新主流居中方法,多练练</p>
 <h4 id="calc"><a href="#calc" class="headerlink" title="calc"></a>calc</h4><p>css3才有,兼容性不好,但是比display:flex在某些情况下更实用<br>比如固定宽高的情况下<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.center</span>&#123;</div><div class="line">    <span class="attribute">width</span>: <span class="number">500px</span>; <span class="attribute">height</span>: <span class="number">500px</span>;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">top</span>: <span class="built_in">calc</span>(50% - (300px / 2));</div><div class="line">    <span class="attribute">left</span>: <span class="built_in">calc</span>(50% - (300px – 2)); </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="absolute-绝对定位居中"><a href="#absolute-绝对定位居中" class="headerlink" title="absolute 绝对定位居中"></a>absolute 绝对定位居中</h4><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">.父&#123;</div><div class="line">    <span class="attribute">position</span>:relative;</div><div class="line">    <span class="attribute">min-height</span>:<span class="number">1000px</span>;</div><div class="line">&#125;</div><div class="line">.子&#123;</div><div class="line">    <span class="attribute">height</span>:auto;</div><div class="line">    <span class="attribute">margin</span>:auto;</div><div class="line">    <span class="attribute">position</span>:absolute;</div><div class="line">    <span class="attribute">overflow</span>:auto;</div><div class="line">    <span class="attribute">top</span>:<span class="number">0</span>;<span class="attribute">right</span>:<span class="number">0</span>;<span class="attribute">left</span>:<span class="number">0</span>;<span class="attribute">down</span>:<span class="number">0</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>必须在父元素声明高度,浏览器兼容性良好</p>
 
       
 
@@ -287,6 +289,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2017/09/12/js常用代码/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          js常用代码
+        
+      </div>
+    </a>
   
   
     <a href="/2017/09/07/第一次面试/" id="article-nav-older" class="article-nav-link-wrap">
@@ -434,27 +445,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">主题配置</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">2048</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">琐事</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -467,6 +470,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">琐事</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">2048</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
