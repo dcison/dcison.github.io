@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Dcison&#39;s Blog">
 <meta property="og:description" content="笔记来源 js删除节点 IE下removeNode() 别的removeChild()sort方法排序只能对数组使用编码 stringObject.charCodeAt(index),index是字符在字符串中的下标刷新 location.reload([bForceGet]) ,[bForceGet]默认值是false,表示从客户端缓存里取当前页。设置为true, 则以GET方式,从服务端取最新">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-09-12T15:51:28.763Z">
+<meta property="og:updated_time" content="2017-09-12T15:55:12.735Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js常用代码">
 <meta name="twitter:description" content="笔记来源 js删除节点 IE下removeNode() 别的removeChild()sort方法排序只能对数组使用编码 stringObject.charCodeAt(index),index是字符在字符串中的下标刷新 location.reload([bForceGet]) ,[bForceGet]默认值是false,表示从客户端缓存里取当前页。设置为true, 则以GET方式,从服务端取最新">
@@ -194,7 +194,8 @@
 <li>如果第二个参数不是数值,会被自动转为一个整数。这个整数只有在2到36之间,才能得到有意义的结果,超出这个范围,则返回NaN。如果第二个参数是0、undefined和null,则直接忽略。</li>
 <li>如果字符串包含对于指定进制无意义的字符,则从最高位开始,只返回可以转换的数值。如果最高位无法转换,则直接返回NaN。<h3 id="parseFloat"><a href="#parseFloat" class="headerlink" title="parseFloat()"></a>parseFloat()</h3></li>
 <li>parseFloat方法会自动过滤字符串前导的空格</li>
-<li>parseFloat会将空字符串转为NaN<h3 id="charAt"><a href="#charAt" class="headerlink" title="charAt()"></a>charAt()</h3>string.charAt(index) 返回string里面index的字符<h3 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h3>arrayObject.join(separator) 将数组里面值用separator作为分隔符连接成一串字符串,跟python一样<h3 id="split"><a href="#split" class="headerlink" title="split()"></a>split()</h3>stringObject.split(separator,howmany)</li>
+<li>parseFloat会将空字符串转为NaN<a id="more"></a>
+<h3 id="charAt"><a href="#charAt" class="headerlink" title="charAt()"></a>charAt()</h3>string.charAt(index) 返回string里面index的字符<h3 id="join"><a href="#join" class="headerlink" title="join()"></a>join()</h3>arrayObject.join(separator) 将数组里面值用separator作为分隔符连接成一串字符串,跟python一样<h3 id="split"><a href="#split" class="headerlink" title="split()"></a>split()</h3>stringObject.split(separator,howmany)</li>
 <li>separator:必需。字符串或正则表达式,从该参数指定的地方分割 stringObject。</li>
 <li>howmany:可选。该参数可指定返回的数组的最大长度。如果设置了该参数,返回的子串不会多于这个参数指定的数组。如果没有设置该参数,整个字符串都会被分割,不考虑它的长度。<h3 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf()"></a>indexOf()</h3>stringObject.indexOf(searchvalue,fromindex)</li>
 <li>searchvalue:必需。规定需检索的字符串值。</li>
@@ -460,35 +461,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">主题配置</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">琐事</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -508,7 +485,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+                <a href="javascript:void(0)" class="js-tag color3">琐事</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -520,11 +505,27 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">vscode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
             
             <div class="clearfix"></div>
