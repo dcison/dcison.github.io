@@ -26,7 +26,7 @@
 <meta property="og:image" content="http://wx4.sinaimg.cn/mw690/006m1w1Aly1flq0u5p3iaj315y035ta4.jpg">
 <meta property="og:image" content="http://wx4.sinaimg.cn/mw690/006m1w1Aly1flq0u7fzh2j30nm0coq5e.jpg">
 <meta property="og:image" content="http://wx1.sinaimg.cn/mw690/006m1w1Aly1flq1k013ylj310j0p3ah7.jpg">
-<meta property="og:updated_time" content="2017-11-21T13:52:27.932Z">
+<meta property="og:updated_time" content="2017-11-21T14:04:13.634Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content=" &#39;“2017年华为杯网络攻防大赛&#39;">
 <meta name="twitter:description" content="2017年11月18日南京邮电大学华为杯网络攻防大赛2泡面+1可乐+12小时=特等奖(第一名) 或许是这辈子拿到最多奖金的一次比赛了吧。特等奖2000，还有额外奖金(感谢队友)">
@@ -212,7 +212,7 @@
 <li>Alice&amp;Bob Revenge</li>
 <li>Just PY</li>
 </ul>
-<h3 id="放出write-up-纪念下-留一个笔记"><a href="#放出write-up-纪念下-留一个笔记" class="headerlink" title="放出write_up 纪念下(留一个笔记)"></a>放出write_up 纪念下(留一个笔记)</h3><p><strong>仅放出我完成的题目的write_up</strong></p>
+<h3 id="放出write-up-纪念下-留一个笔记"><a href="#放出write-up-纪念下-留一个笔记" class="headerlink" title="放出write_up 纪念下(留一个笔记)"></a>放出write_up 纪念下(留一个笔记)</h3><p><strong>仅放出我完成的题目的write_up吗,其他的可以看我队友的<a href="https://mzi.red/2017/11/19/nyctf2017/#more" target="_blank" rel="external">blog</a></strong></p>
 <ol>
 <li><p>SQL初战</p>
 <p>宽字节注入,与原来平台上的思路一样,可参考我以前的<a href="http://m.blog.csdn.net/dcison/article/details/53125540" target="_blank" rel="external">blog</a> 的sql injection 3<br>这里直接放playload了</p>
@@ -221,12 +221,27 @@
 <p>拿flag:<a href="https://ctf11.nuptsast.com/index.php?id=%df" target="_blank" rel="external">https://ctf11.nuptsast.com/index.php?id=%df</a>‘ union select 1,group_concat(flag) from flag %23</p>
 <p>flag{NJUPT_Sql_1nj3ction_ch4ll_c0mpl3t3!}</p>
 </li>
-<li>签到2<br>访问hint.txt得到提示文件读取<br>构建playload<br><img src="http://wx4.sinaimg.cn/large/006m1w1Agy1flq0t6taajj30sn0biabj.jpg"><br>对其base64解码得到flag<br><img src="http://wx1.sinaimg.cn/large/006m1w1Agy1flq0t9kzqij30f80dr74s.jpg"></li>
-<li><p>彭泽家族天下第一<br>根据以前做的原题改cookie中的login=1,可得到源码<br><img src="http://wx3.sinaimg.cn/large/006m1w1Agy1flq0tbz0ppj31fu0pete8.jpg"><br>发现是做过的原题,直接上playload:</p>
-<p><a href="https://ctf7.nuptsast.com/index.php?user=php://input&amp;file=39adfa359d047dc2d867e3f706b2aae2" target="_blank" rel="external">https://ctf7.nuptsast.com/index.php?user=php://input&amp;file=39adfa359d047dc2d867e3f706b2aae2</a><br>同时post 数据: IM PengZeFan!(由于比赛采用了https平台,我burp未配置证书,只能让队友发送playload了,所以说队友是很重要滴)<br><img src="http://wx1.sinaimg.cn/mw690/006m1w1Agy1flq0tek7p3j30qw0kq40p.jpg"></p>
+<li><p>签到2</p>
+<p>访问hint.txt得到提示文件读取<br>构建playload</p>
+<p><img src="http://wx4.sinaimg.cn/large/006m1w1Agy1flq0t6taajj30sn0biabj.jpg"></p>
+<p>对其base64解码得到flag</p>
+<p><img src="http://wx1.sinaimg.cn/large/006m1w1Agy1flq0t9kzqij30f80dr74s.jpg"></p>
 </li>
-<li>逆向签到<br>没啥技术含量,直接winhex等软件打开搜索flag就得到了<br><img src="http://wx2.sinaimg.cn/large/006m1w1Agy1flq0tgjullj30gd02s3za.jpg"></li>
-<li>Easy WireShark<br>比赛的时候超幸运一下就找到了,赛后写write_up找了超久。。。<br><img src="http://wx3.sinaimg.cn/mw690/006m1w1Agy1flq0u0zbjwj31510pnwmx.jpg"></li>
+<li><p>彭泽家族天下第一<br>根据以前做的原题改cookie中的login=1,可得到源码</p>
+<p><img src="http://wx3.sinaimg.cn/large/006m1w1Agy1flq0tbz0ppj31fu0pete8.jpg"></p>
+<p>发现是做过的原题,直接上playload:</p>
+<p><a href="https://ctf7.nuptsast.com/index.php?user=php://input&amp;file=39adfa359d047dc2d867e3f706b2aae2" target="_blank" rel="external">https://ctf7.nuptsast.com/index.php?user=php://input&amp;file=39adfa359d047dc2d867e3f706b2aae2</a></p>
+<p>同时post 数据: IM PengZeFan!(由于比赛采用了https平台,我burp未配置证书,只能让队友发送playload了,所以说队友是很重要滴)</p>
+<p><img src="http://wx1.sinaimg.cn/mw690/006m1w1Agy1flq0tek7p3j30qw0kq40p.jpg"></p>
+</li>
+<li><p>逆向签到</p>
+<p>没啥技术含量,直接winhex等软件打开搜索flag就得到了</p>
+<p><img src="http://wx2.sinaimg.cn/large/006m1w1Agy1flq0tgjullj30gd02s3za.jpg"></p>
+</li>
+<li><p>Easy WireShark</p>
+<p>比赛的时候超幸运一下就找到了,赛后写write_up找了超久。。。</p>
+<p><img src="http://wx3.sinaimg.cn/mw690/006m1w1Agy1flq0u0zbjwj31510pnwmx.jpg"></p>
+</li>
 <li><p>大神的求救1<br>题目：0x11-32 0x16-34123 0x0-23 0x7-33 0x146-4311提示是摩斯密码</p>
 <p>对’-‘前的数字转2进制</p>
 <p>得到10001 10110 0 111 101000110</p>
@@ -241,21 +256,30 @@
 </ol>
 <p>连接字符串100 01 000 0000 0 10 110 00 000 000 111 1010 001 1 0<br>用’-‘替换1,’.’替换0,得到:</p>
 <p>-.. .- … …. . -. –. .. … … — -.-. ..- - .</p>
-<p>在线解密就行了<br><img src="http://wx3.sinaimg.cn/mw690/006m1w1Agy1flq0u3be7kj30mz061jro.jpg"></p>
+<p>在线解密就行了</p>
+<p><img src="http://wx3.sinaimg.cn/mw690/006m1w1Agy1flq0u3be7kj30mz061jro.jpg"></p>
 </li>
-<li><p>梅子酒要充水卡<br>给了两个文件,文件名分别是36 48 其实是代表金额数<br>题目要说充100 RMB ,对两个文件逐行分析(左边那个是已经改好的,已经代表100RMB,原来是36RMB)<br><img src="http://wx4.sinaimg.cn/mw690/006m1w1Aly1flq0u5p3iaj315y035ta4.jpg"><br>36的16进制是24，48的16进制是30<br>所以6400是100RMB，3000+CFFF = FFFF ，所以用FFFF-6400得9BFF<br>所以Flag就是 64 9B(flag是数据段+校验段)</p>
+<li><p>梅子酒要充水卡</p>
+<p>给了两个文件,文件名分别是36 48 其实是代表金额数<br>题目要说充100 RMB ,对两个文件逐行分析(左边那个是已经改好的,已经代表100RMB,原来是36RMB)</p>
+<p><img src="http://wx4.sinaimg.cn/mw690/006m1w1Aly1flq0u5p3iaj315y035ta4.jpg"></p>
+<p>36的16进制是24，48的16进制是30,所以6400是100RMB而3000+CFFF = FFFF ，所以用FFFF-6400得9BFF</p>
+<p>所以Flag就是 64 9B(flag是数据段+校验段)</p>
 </li>
 <li><p>混合编码</p>
 <p>同样是南邮ctf平台上原题(base全家桶)</p>
 <p>直接上以前人家写好的代码</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> base64</div><div class="line">steps = []</div><div class="line">f = open (<span class="string">'code.txt'</span>,<span class="string">'rb'</span>)</div><div class="line">p = f.read()</div><div class="line">n = <span class="string">""</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="comment"># Base16</span></div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="keyword">print</span> (<span class="string">"[?] using base16 deocde"</span>)</div><div class="line">        n = base64.b16decode(p)</div><div class="line">        <span class="keyword">print</span> (<span class="string">"[+] %s"</span> % (n))</div><div class="line">        steps.append(<span class="number">16</span>)</div><div class="line">        p = n</div><div class="line">        <span class="keyword">continue</span></div><div class="line">    <span class="keyword">except</span>:</div><div class="line">        <span class="keyword">pass</span></div><div class="line">    <span class="comment"># Base32</span></div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="keyword">print</span> (<span class="string">"[?] using base32 deocde"</span>)</div><div class="line">        n = base64.b32decode(p)</div><div class="line">        <span class="keyword">print</span> (<span class="string">"[+] %s"</span> % (n))</div><div class="line">        steps.append(<span class="number">32</span>)</div><div class="line">        p = n</div><div class="line">        <span class="keyword">continue</span></div><div class="line">    <span class="keyword">except</span>:</div><div class="line">        <span class="keyword">pass</span></div><div class="line">    <span class="comment"># Base64</span></div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="keyword">print</span> (<span class="string">"[?] using base64 deocde"</span>)</div><div class="line">        n = base64.b64decode(p)</div><div class="line">        <span class="keyword">print</span> (<span class="string">"[+] %s"</span> % (n))</div><div class="line">        steps.append(<span class="number">64</span>)</div><div class="line">        p = n</div><div class="line">        <span class="keyword">continue</span></div><div class="line">    <span class="keyword">except</span>:</div><div class="line">        <span class="keyword">pass</span></div><div class="line">    <span class="keyword">break</span></div><div class="line"></div><div class="line"><span class="keyword">print</span> (<span class="string">"[+] flag found : %s"</span> % (n))</div><div class="line"><span class="keyword">print</span> (<span class="string">"[+] steps : %s"</span> % (steps))</div></pre></td></tr></table></figure>
-<p>(借用了队友电脑跑的结果)<br><img src="http://wx4.sinaimg.cn/mw690/006m1w1Aly1flq0u7fzh2j30nm0coq5e.jpg"></p>
 </li>
-<li><p>php (未在比赛中完成,也有额外奖金)<br>关键是如何<a href="https://www.leavesongs.com/PENETRATION/php-filter-magic.html" target="_blank" rel="external">绕过exit</a></p>
+</ol>
+<p>   (借用了队友电脑跑的结果)</p>
+<p>  <img src="http://wx4.sinaimg.cn/mw690/006m1w1Aly1flq0u7fzh2j30nm0coq5e.jpg"></p>
+<ol>
+<li><p>php (与额外奖金错过了,心痛)</p>
+<p>关键是如何<a href="https://www.leavesongs.com/PENETRATION/php-filter-magic.html" target="_blank" rel="external">绕过exit</a></p>
 <p>关键是这句话:</p>
 <p>“phpexit”一共7个字符，因为base64算法解码时是4个byte一组，所以给他增加1个“a”一共8个字符。这样，”phpexita”被正常解码，而后面我们传入的webshell的base64内容也被正常解码。结果就是&lt;?php exit; ?&gt;没有了。</p>
-<p>所以构建b=a+php语句的base64编码(我写的是&lt;?php show_source(‘flagggggg.php’) ?&gt;)</p>
-<p>这文件是访问其根目录得到的提示<br><img src="http://wx1.sinaimg.cn/mw690/006m1w1Aly1flq1k013ylj310j0p3ah7.jpg"></p>
+<p>这题中访问其根目录得到的提示存在一个flagggggg.php文件。所以构建b=a+php语句的base64编码(我写的是&lt;?php show_source(‘flagggggg.php’) ?&gt;)</p>
+<p><img src="http://wx1.sinaimg.cn/mw690/006m1w1Aly1flq1k013ylj310j0p3ah7.jpg"></p>
 </li>
 </ol>
 
@@ -506,6 +530,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">主题配置</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">2048</a>
               </li>
              
@@ -518,15 +550,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">主题配置</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">琐事</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -542,11 +574,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+                <a href="javascript:void(0)" class="js-tag color3">gitment</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -570,19 +598,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">CSS</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">gitment</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
               </li>
             
             <div class="clearfix"></div>
