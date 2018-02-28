@@ -217,7 +217,7 @@
 </li>
 </ul>
 <hr>
-<h2 id="main-js-入口文件的代码"><a href="#main-js-入口文件的代码" class="headerlink" title="main.js(入口文件的代码)"></a>main.js(入口文件的代码)</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./components/js/app'</span>;</div><div class="line"><span class="keyword">import</span> Pubsub <span class="keyword">from</span> <span class="string">'pubsub-js'</span>;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  componentDidMount()&#123;</div><div class="line">    Pubsub.subscribe(<span class="string">'WIN'</span>, () =&gt; &#123;</div><div class="line">      alert(<span class="string">"你赢了"</span>);</div><div class="line">      location.reload();</div><div class="line">    &#125;);</div><div class="line">    Pubsub.subscribe(<span class="string">'OVER'</span>, () =&gt; &#123;</div><div class="line">      alert(<span class="string">"你输了"</span>);</div><div class="line">      location.reload();</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">  componentWillUnmount()&#123;</div><div class="line">    Pubsub.unsubscribe(<span class="string">'WIN'</span>);    </div><div class="line">    Pubsub.unsubscribe(<span class="string">'OVER'</span>);    </div><div class="line">  &#125;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;App/&gt;</div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line">ReactDom.render(&lt;Main /&gt;, document.getElementById('app'));</div></pre></td></tr></table></figure>
+<h2 id="main-js-入口文件的代码"><a href="#main-js-入口文件的代码" class="headerlink" title="main.js(入口文件的代码)"></a>main.js(入口文件的代码)</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> ReactDom <span class="keyword">from</span> <span class="string">'react-dom'</span>;</div><div class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./components/js/app'</span>;</div><div class="line"><span class="keyword">import</span> Pubsub <span class="keyword">from</span> <span class="string">'pubsub-js'</span>;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">Main</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">  componentDidMount()&#123;</div><div class="line">    Pubsub.subscribe(<span class="string">'WIN'</span>, () =&gt; &#123;</div><div class="line">      alert(<span class="string">"你赢了"</span>);</div><div class="line">      location.reload();</div><div class="line">    &#125;);</div><div class="line">    Pubsub.subscribe(<span class="string">'OVER'</span>, () =&gt; &#123;</div><div class="line">      alert(<span class="string">"你输了"</span>);</div><div class="line">      location.reload();</div><div class="line">    &#125;);</div><div class="line">  &#125;</div><div class="line">  componentWillUnmount()&#123;</div><div class="line">    Pubsub.unsubscribe(<span class="string">'WIN'</span>);    </div><div class="line">    Pubsub.unsubscribe(<span class="string">'OVER'</span>);    </div><div class="line">  &#125;</div><div class="line">  render() &#123;</div><div class="line">    <span class="keyword">return</span> (</div><div class="line">      &lt;App/&gt;</div><div class="line">    )</div><div class="line">  &#125;</div><div class="line">&#125;;</div><div class="line">ReactDom.render(<span class="xml"><span class="tag">&lt;<span class="name">Main</span> /&gt;</span>, document.getElementById('app'));</span></div></pre></td></tr></table></figure>
 <p>首先就是引入该引入的文件，然后用ReactDom渲染，都是React常识了<br>说一下Pubsub,这里接受子组件传来的消息:1. win 2. game over,然后分别处理(其实就是弹窗( :3 )),然后强制刷新。可以不用Pubsub,直接在APP的组件里处理胜负。</p>
 <hr>
 <h2 id="app-js-重头戏"><a href="#app-js-重头戏" class="headerlink" title="app.js (重头戏)"></a>app.js (重头戏)</h2><p>首先分析下2048需要什么功能:</p>
@@ -225,7 +225,7 @@
 <li>首要的肯定是渲染出界面吧(4*4个格子)</li>
 <li>能玩!(上下左右移动/触摸移动格子)</li>
 <li>分数展示</li>
-<li>能判断胜负<h3 id="第一个功能"><a href="#第一个功能" class="headerlink" title="第一个功能"></a>第一个功能</h3>标题，分数展示就不说了，主要讲如何创建16个格子，而且随机初始化两个格子位置<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> <span class="string">'../assets/app.less'</span>;</div><div class="line"><span class="keyword">import</span> Pubsub <span class="keyword">from</span> <span class="string">'pubsub-js'</span>;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props) &#123;</div><div class="line">        <span class="keyword">super</span>(props);</div><div class="line">        <span class="keyword">this</span>.state = &#123;</div><div class="line">            score: <span class="number">0</span>, <span class="comment">//初始分数为0</span></div><div class="line">            arr: [], <span class="comment">//放16个格子的数组</span></div><div class="line">            moveable: <span class="literal">false</span> <span class="comment">//格子是否可以移动,后面说</span></div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">let</span> mes;</div><div class="line">        mes = <span class="keyword">this</span>.state.arr.map(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</div><div class="line">            <span class="keyword">return</span> (</div><div class="line">                item.map(<span class="function">(<span class="params">i</span>) =&gt;</span> &#123;</div><div class="line">                    <span class="keyword">return</span> (</div><div class="line">                        &lt;div className=&#123;<span class="string">`game-item-<span class="subst">$&#123;i&#125;</span>`</span>&#125; id=<span class="string">"phone"</span> &gt;</div><div class="line">                            &#123;<span class="string">`<span class="subst">$&#123;i &gt; <span class="number">0</span> ? i : <span class="string">""</span>&#125;</span>`</span>&#125;</div><div class="line">                        &lt;<span class="regexp">/div&gt;)</span></div><div class="line"><span class="regexp">                &#125;)</span></div><div class="line"><span class="regexp">            )</span></div><div class="line"><span class="regexp">        &#125;)</span></div><div class="line"><span class="regexp">        return (</span></div><div class="line"><span class="regexp">            &lt;div&gt;</span></div><div class="line"><span class="regexp">                &lt;div className="title"&gt;2048&lt;/</span>div&gt;</div><div class="line">                &lt;div&gt;Score: &lt;span className="score"&gt;&#123;this.state.score&#125;&lt;/span&gt;&lt;/div&gt;</div><div class="line">                &lt;div className=<span class="string">"game-box"</span>&gt;</div><div class="line">                    &#123;mes&#125;</div><div class="line">                &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">            &lt;/</span>div&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure>
+<li>能判断胜负<h3 id="第一个功能"><a href="#第一个功能" class="headerlink" title="第一个功能"></a>第一个功能</h3>标题，分数展示就不说了，主要讲如何创建16个格子，而且随机初始化两个格子位置<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> React <span class="keyword">from</span> <span class="string">'react'</span>;</div><div class="line"><span class="keyword">import</span> <span class="string">'../assets/app.less'</span>;</div><div class="line"><span class="keyword">import</span> Pubsub <span class="keyword">from</span> <span class="string">'pubsub-js'</span>;</div><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props) &#123;</div><div class="line">        <span class="keyword">super</span>(props);</div><div class="line">        <span class="keyword">this</span>.state = &#123;</div><div class="line">            score: <span class="number">0</span>, <span class="comment">//初始分数为0</span></div><div class="line">            arr: [], <span class="comment">//放16个格子的数组</span></div><div class="line">            moveable: <span class="literal">false</span> <span class="comment">//格子是否可以移动,后面说</span></div><div class="line">        &#125;;</div><div class="line">    &#125;</div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">let</span> mes;</div><div class="line">        mes = <span class="keyword">this</span>.state.arr.map(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</div><div class="line">            <span class="keyword">return</span> (</div><div class="line">                item.map(<span class="function">(<span class="params">i</span>) =&gt;</span> &#123;</div><div class="line">                    <span class="keyword">return</span> (</div><div class="line">                        &lt;div className=&#123;<span class="string">`game-item-<span class="subst">$&#123;i&#125;</span>`</span>&#125; id=<span class="string">"phone"</span> &gt;</div><div class="line">                            &#123;<span class="string">`<span class="subst">$&#123;i &gt; <span class="number">0</span> ? i : <span class="string">""</span>&#125;</span>`</span>&#125;</div><div class="line">                        &lt;<span class="regexp">/div&gt;)</span></div><div class="line"><span class="regexp">                &#125;)</span></div><div class="line"><span class="regexp">            )</span></div><div class="line"><span class="regexp">        &#125;)</span></div><div class="line"><span class="regexp">        return (</span></div><div class="line"><span class="regexp">            &lt;div&gt;</span></div><div class="line"><span class="regexp">                &lt;div className="title"&gt;2048&lt;/</span>div&gt;</div><div class="line">                &lt;div&gt;Score: <span class="xml"><span class="tag">&lt;<span class="name">span</span> <span class="attr">className</span>=<span class="string">"score"</span>&gt;</span>&#123;this.state.score&#125;<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></div><div class="line">                &lt;div className=<span class="string">"game-box"</span>&gt;</div><div class="line">                    &#123;mes&#125;</div><div class="line">                &lt;<span class="regexp">/div&gt;</span></div><div class="line"><span class="regexp">            &lt;/</span>div&gt;</div><div class="line">        )</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">export</span> <span class="keyword">default</span> App;</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>首先是render渲染title:2048、分数:score,score值绑定里state里的score,然后是mes: 16个格子,主要就是用map遍历二维数组,得到里面的值,将里面的值&gt;0的格子渲染出来，并且用ES6模板语言,设置了classname随格子的值变化,就不用在每次移动格子之后去操作css了<br>然后是初始化<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">componentWillMount() &#123;</div><div class="line">        <span class="keyword">this</span>.initRandom();</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -522,15 +522,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">2048</a>
+                <a href="javascript:void(0)" class="js-tag color3">琐事</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">react</a>
+                <a href="javascript:void(0)" class="js-tag color3">gitment</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面经</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -546,18 +554,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">琐事</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">javascript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">笔记</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">快捷键</a>
               </li>
              
@@ -570,7 +566,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">gitment</a>
+                <a href="javascript:void(0)" class="js-tag color2">永远的七日之都在线模拟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -582,19 +590,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">面试</a>
+                <a href="javascript:void(0)" class="js-tag color5">2048</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">永远的七日之都在线模拟</a>
+                <a href="javascript:void(0)" class="js-tag color1">react</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">CSS</a>
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
             
             <div class="clearfix"></div>
