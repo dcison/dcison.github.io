@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://dcison.github.io">
-  <title>Tag: CTF | Dcison&#39;s Blog</title>
+  <title>谈谈原型链、原型、继承、执行上下文及作用域链的关系 | Dcison&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="求求dalao教我敲代码吧">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Dcison&#39;s Blog">
-<meta property="og:url" content="https://dcison.github.io/tags/CTF/index.html">
+  <meta name="description" content="前文我相信很多人知道原型链、原型、继承、执行上下文、作用域等等关键名词，但是如何解释他们呢？而且这些又是面试必问题，这就需要我们对它有充足的理解，而不是强行的背诵。本文会打算以比较通俗的例子去讲解下这几个的关系。">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="谈谈原型链、原型、继承、执行上下文及作用域链的关系">
+<meta property="og:url" content="https://dcison.github.io/2018/03/20/谈谈原型链、原型、继承、执行上下文及作用域链的关系/index.html">
 <meta property="og:site_name" content="Dcison&#39;s Blog">
-<meta property="og:description" content="求求dalao教我敲代码吧">
+<meta property="og:description" content="前文我相信很多人知道原型链、原型、继承、执行上下文、作用域等等关键名词，但是如何解释他们呢？而且这些又是面试必问题，这就需要我们对它有充足的理解，而不是强行的背诵。本文会打算以比较通俗的例子去讲解下这几个的关系。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-03-20T08:07:25.972Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Dcison&#39;s Blog">
-<meta name="twitter:description" content="求求dalao教我敲代码吧">
+<meta name="twitter:title" content="谈谈原型链、原型、继承、执行上下文及作用域链的关系">
+<meta name="twitter:description" content="前文我相信很多人知道原型链、原型、继承、执行上下文、作用域等等关键名词，但是如何解释他们呢？而且这些又是面试必问题，这就需要我们对它有充足的理解，而不是强行的背诵。本文会打算以比较通俗的例子去讲解下这几个的关系。">
   
     <link rel="alternative" href="/atom.xml" title="Dcison&#39;s Blog" type="application/atom+xml">
   
@@ -159,79 +161,195 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-谈谈原型链、原型、继承、执行上下文及作用域链的关系" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/21/2017年华为杯网络攻防大赛/" class="archive-article-date">
-  	<time datetime="2017-11-21T12:52:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-21</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/21/2017年华为杯网络攻防大赛/">华为杯网络攻防大赛</a>
+    <h1 class="article-title" itemprop="name">
+      谈谈原型链、原型、继承、执行上下文及作用域链的关系
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/03/20/谈谈原型链、原型、继承、执行上下文及作用域链的关系/" class="archive-article-date">
+  	<time datetime="2018-03-20T06:09:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前文"><a href="#前文" class="headerlink" title="前文"></a>前文</h2><pre><code>我相信很多人知道原型链、原型、继承、执行上下文、作用域等等关键名词，但是如何解释他们呢？而且这些又是面试必问题，这就需要我们对它有充足的理解，而不是强行的背诵。本文会打算以比较通俗的例子去讲解下这几个的关系。
+</code></pre><a id="more"></a>
+<h2 id="原型、原型链"><a href="#原型、原型链" class="headerlink" title="原型、原型链"></a>原型、原型链</h2><pre><code>一个对象里，默认有以下两个属性：
+</code></pre><ol>
+<li>__proto__ 姑且称它为原型指针</li>
+<li>prototype 这个是原型对象<br>按照我的理解，原型应该就是指原型对象，原型链即通过原型指针<strong>proto</strong> 找到它的<strong>继承</strong>来源的<strong>原型对象</strong>，这里提到了继承，我们可以看看下面的继承的说明。<br>用比较奇葩的例子来说的话，我们现在有一只可爱的<strong>警犬（原型链）</strong>，且还有一名罪犯的<strong>臭袜子（原型指针）</strong>，和几个咸鱼人，我们想找到真的<strong> 咸鱼人（原型）</strong>是谁，这时就要通过我们可爱的警犬来寻找咸鱼人了。即通过原型指针（证物）顺着原型链（即通过警犬）找到罪犯（原型对象），问题又来了，罪犯可能不止一个啊。没事，我们不已经找到一个了嘛，通过找出来的罪犯（原型指针），用酷刑逼供（还是顺着原型链）找到新的罪犯（新的原型对象）。这样我们用原型指针来找到原型对象的这种途径（或者称为方法）就是叫原型链。我们通过对象的原型链可以一直找到最初的对象Object.prototype.__proto__  即为 NULL ，体现了JavaScript万物皆对象，万物皆空的思想</li>
+</ol>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><pre><code>原型链出现了继承，那什么是继承呢，学过C++/java等有类编程语言的人应该能比较容易的理解，不扯开讲什么是类，我们这里关注点是父类，子类，实例的关系。
+</code></pre><p>先用ES5的语法弄一个简单的原型链继承<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function Super()&#123;</div><div class="line">	this.name = &apos;ssss&apos;</div><div class="line">&#125;</div><div class="line">function Child()&#123;&#125;</div><div class="line">Child.prototype = new Super()</div><div class="line">var instance = new Child()</div></pre></td></tr></table></figure></p>
+<p>这里又扯到了原型链，就是因为原型链与继承混在一起，他们又是一个抽象的概念让我们比较难以理解。没看懂什么是原型链的话可以去上面再重温下。</p>
+<p>这里 Super为父类，Child为子类，通过在子类的原型对象上创建父类的实例来完成一次继承。<br>我们可以把子类的原型对象看成是一个实例，实例可以通过原型指针(__proto__ )找到父类的原型对象(prototype)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Child.prototype.__proto__ === Super.prototype //true</div><div class="line">//而instance又是Child的实例，所以</div><div class="line">instance.__proto__  === Child.prototype //true</div><div class="line">instance.__proto__.__proto__  === Super.prototype //true</div></pre></td></tr></table></figure></p>
+<p>这里我们稍微提下ES5与ES6继承的区别，上面的例子中Child.__proto__ 指向谁呢？我们先留个悬念，来看下ES6的继承<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">class  Super&#123;</div><div class="line">	constructor(x,y)&#123;</div><div class="line">		this.x  =  x		</div><div class="line">		this.y  =  y</div><div class="line">	&#125;</div><div class="line">	toString()&#123;</div><div class="line">		return  `$&#123;this.x&#125; and $&#123;this.y&#125;`</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">class  Child  extends  Super&#123;</div><div class="line">	constructor(props)&#123;	</div><div class="line">		super(props)</div><div class="line">	&#125;</div><div class="line">	toValue()&#123;</div><div class="line">		return  `$&#123;this.x&#125; and $&#123;this.y&#125; child`</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">console.log(Child.__proto__ == Super) //true</div></pre></td></tr></table></figure></p>
+<p>ES5中Child.__proto__ （刚才那个悬念）指向function,而ES6中却指向了Super，这是因为ES6继承采取的是<strong>先构造父类对象的实例对象this</strong>，然后子类的构造函数修改this。所以这里ES6的原型指针指向的是Super。而ES5中却是把<strong>实例对象先构造（即先构造Child）</strong>，然后把父类的属性方法添加到子类对象上。因为我们是function Child()创建子类的，所以悬念的答案是function。<br>再来看下面的例子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">ES5中我们通过了原型链继承有这么一句话</div><div class="line">Child.prototype = new Super()</div><div class="line">所以我们可以很容易理解子类的原型上其实是父类的实例</div><div class="line">Child.prototype.__proto__ === Super.prototype //true</div><div class="line">ES6中子类的原型是父类的实例，所以下面也是成立的</div><div class="line">Child.prototyp.__proto__ === Super.prototype //true</div><div class="line">如果ES5中不使用原型继承呢，比如我们使用构造函数继承</div><div class="line">function Super()&#123;</div><div class="line">	this.name = &apos;sss&apos;</div><div class="line">&#125;</div><div class="line">Super.prototype.sayName = function()&#123;</div><div class="line">	console.log(this.name)	</div><div class="line">&#125;</div><div class="line">function Child()&#123;</div><div class="line">	Super.call(this)</div><div class="line">&#125;</div><div class="line">var instance = new Child()</div><div class="line">这里的Child.prototyp.__proto__ 为undefined</div></pre></td></tr></table></figure></p>
+<hr>
+<p>用分割线表示我们上面可以分成一类去学习，下面我们来说说作用域与执行上下文。</p>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="作用域"></a>作用域</h2><p>JavaScript里面是没有块级作用域的说法的（ES6之前，ES6的块级作用域这里不谈），只有函数作用域，我们把最外层函数外的区域叫做全局作用域，函数体内的作用域叫做该函数的局部作用域。而变量根据我们定义的位置来命名它，比如我把变量定义在了全局，它就叫全局作用域，把它定义在某个函数内就叫局部作用域，变量所在的区域内，变量可以被访问操作。全局函数无法查看局部函数的内部细节，但局部函数可以查看其上层的函数细节，直至全局细节。 当需要从局部函数查找某一属性或方法时，如果当前作用域没有找到，就会上溯到上层作用域查找， 直至全局作用域，这种组织形式就是作用域链。<br>有点长也有点似懂非懂，我们可以结合原型链来理解，也可以通过我下面举的奇葩例子来理解：<br>我们假设整个中国外是全局（比如世界），中国内有好多个省（假设为A级作用域），省内又有好多个城市（B级作用域），城市内又有许多个镇（C级作用域），镇内又有许多个街道（D级作用域）。假设我们现在处于C级，我想找到一个江苏的地名，作用域的规范告诉我们，不能往下找（不允许访问D级），但是本级又找不到（C级），那我们只能往上一级找一下（B级），B级依旧找不到，那我们只能继续往上（A级），好在这里我们找到了江苏！。这就是作用域链，有了原型链的经验我们应该更好理解了。<br>关于作用域链与原型链的区别我觉得可以这么理解：<br>作用域我就单纯的往上一级寻找，他们之间的关系不如原型链之间的关系那样<strong>紧密</strong>，毕竟原型链经常和继承混在一起谈。和作用域经常混在一起谈的玩意是执行上下文。</p>
+<h2 id="执行上下文"><a href="#执行上下文" class="headerlink" title="执行上下文"></a>执行上下文</h2><p>执行上下文是我觉得最抽象的东西，什么是上下文，什么又是执行上下文？其实他们都是同一个说法（个人理解），至于把加上执行，是因为它跟执行有密切的关系。<br>你或许会经常在网上看到这句关于执行上下文的概念：</p>
+<blockquote>
+<p>当程序运行，进入到某段代码块时，一个新的执行上下文被创建，并被放入一个 stack 中。当程序运行到这段代码块结尾后，对应的执行上下文被弹出 stack。<br>那么怎么去理解它呢？首先我们把执行上下文看成一个对象：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">example&#123;</div><div class="line">	VO: // 变量对象</div><div class="line">	this: //决定this指向的</div><div class="line">	作用域链: //决定作用域链</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+</blockquote>
+<p>当我们<strong>调用</strong>一个函数时，这个执行上下文就会被创建，并把里面三个属性初始化，对于VO的话建立arguments，检查函数声明，检查变量声明等等，注意<strong>这里不是赋值</strong>。this的话确定this的指向，以及确定好作用域链的范围。等到<strong>执行</strong>函数的时候，才会顺着代码一行一行地给VO对象里的值赋值。等到这个执行完后，把这个执行上下文对象弹出栈。<br>在全局中执行上下文是长这样的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">windowEC = &#123;</div><div class="line">    VO: window,</div><div class="line">    作用域链: &#123;&#125;,</div><div class="line">    this: window</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="以上，完，希望这篇文章对大家理解有所帮助。"><a href="#以上，完，希望这篇文章对大家理解有所帮助。" class="headerlink" title="以上，完，希望这篇文章对大家理解有所帮助。"></a>以上，完，希望这篇文章对大家理解有所帮助。</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">CTF</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">华为杯</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">校赛</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/随笔/" class="article-tag-list-link color3">随笔</a>
+        			<a href="/categories/笔记/" class="article-tag-list-link color3">笔记</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=https://dcison.github.io/2018/03/20/谈谈原型链、原型、继承、执行上下文及作用域链的关系/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/02/27/从输入网址到页面显示/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">从输入网址到页面显示</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <div id="box"></div>
+<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+var gitment = new Gitment({
+  owner: 'dcison',
+  repo: 'dcison.github.io',
+  oauth: {
+    client_id: 'c41146547899a6b3805a',
+    client_secret: '88b444539c7c8c9360579e464c8f474527537864',
+  },
+})
+gitment.render('box')
+</script>
+  
+  
+  
+  
   
 
-    
+  
+
+  
+
+  
+
 
 
           </div>
@@ -254,9 +372,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
