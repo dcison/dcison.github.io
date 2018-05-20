@@ -1,0 +1,1390 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="http://wx2.sinaimg.cn/large/006m1w1Agy1fitototolwj30dw0dw0we.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="http://wx2.sinaimg.cn/large/006m1w1Agy1fitototolwj30dw0dw0we.jpg?v=5.1.4">
+
+
+
+
+
+
+  <meta name="keywords" content="面经,春招," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="总结主要分为5个主体：①HTML②CSS③JavaScript④前端工具⑤网络知识。以及自己用的项目经历和微信小程序知识">
+<meta name="keywords" content="面经,春招">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端面试总结">
+<meta property="og:url" content="https://dcison.github.io/2018/05/20/前端面试总结/index.html">
+<meta property="og:site_name" content="Dcison&#39;s Blog">
+<meta property="og:description" content="总结主要分为5个主体：①HTML②CSS③JavaScript④前端工具⑤网络知识。以及自己用的项目经历和微信小程序知识">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-20T09:17:30.108Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端面试总结">
+<meta name="twitter:description" content="总结主要分为5个主体：①HTML②CSS③JavaScript④前端工具⑤网络知识。以及自己用的项目经历和微信小程序知识">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://dcison.github.io/2018/05/20/前端面试总结/"/>
+
+
+
+
+
+  <title>前端面试总结 | Dcison's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Dcison's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一个安全转前端的小白</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://dcison.github.io/2018/05/20/前端面试总结/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dcison">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://wx2.sinaimg.cn/large/006m1w1Agy1fitototolwj30dw0dw0we.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dcison's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端面试总结</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-20T17:07:52+08:00">
+                2018-05-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术分享/" itemprop="url" rel="index">
+                    <span itemprop="name">技术分享</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/20/前端面试总结/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/20/前端面试总结/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>总结主要分为5个主体：①HTML②CSS③JavaScript④前端工具⑤网络知识。<br>以及自己用的项目经历和微信小程序知识</p>
+<a id="more"></a>
+<h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><ol>
+<li><p>Doctype的作用</p>
+<p> 答：规范HTML以什么方式去解析文档，有标准模式、兼容模式两种。标准模式下，HTML排版与JavaScript以该浏览器支持的最高标准运行。兼容模式下，页面以宽松向后兼容方式显示，模拟老浏览器的行为来防止网站无法工作。</p>
+</li>
+<li><p>HTML5 为什么只需要写 &lt;!DOCTYPE HTML&gt;</p>
+<p> 答：HTML5不基于SGML（标准通用标记语言），所以不需要写DTD（文档定义类型）</p>
+</li>
+<li><p>HTML5新增哪些标签？删去了哪些标签？</p>
+<p> 答： 太多了不一一列举，详情可百度<br>①新增的标签有：</p>
+<pre><code>内容标签：header（顶部栏）、nav（导航栏）、article（正文）、section（片段）、footer（底部栏）、main(主体内容)
+媒体标签：audio（音频）、video（视频）
+表单标签： email、date、time、search
+绘图： canvas
+</code></pre><p> ②删去的标签有：</p>
+<pre><code>frame改为iframe；
+可以用CSS代替的标签:basefont、big、font、s、strick、tt、u等；
+只有个别浏览器支持的标签：applet、bgsound、blink、marquee
+</code></pre></li>
+<li><p>常见浏览器内核</p>
+<p> 答：①浏览器的内核是分为两个部分的，一是渲染引擎，另一个是JS引擎。现在JS引擎比较独立，内核更加倾向于说渲染引擎。②Trident：IE；Gecko：Firefox；Webkit:Safari、原Chrome;Persto: 原Opera ；Blink：现Chrome、Opera    </p>
+</li>
+<li><p>HTML 和 XHTML 有什么区别</p>
+<p> 答：XHTML 可以认为是 XML 版本的 HTML，为符合 XML 要求，XHTML 语法上要求更严谨些。体现在：XHTML 要求正确嵌套、所有元素必须关闭、区分大小写、属性值必须要用双引号、用id代替name属性、特殊字符的处理（如&lt;要用&lt;）</p>
+</li>
+<li><p>为什么通常推荐将 CSS <code>&lt;link&gt;</code> 放置在 <code>&lt;head&gt;&lt;/head&gt;</code> 之间，而将 JS <code>&lt;script&gt;</code> 放置在 <code>&lt;/body&gt;</code> 之前？你知道有哪些例外吗？</p>
+<p> 答：浏览器渲染顺序是从上至下的，用这种方式渲染的话，在解析js代码之前，页面内容就能出现在浏览器，给用户更好的体验。当JS放在head部分中时，可以保证该脚本（一般是库）在其他代码调用之前被加载。</p>
+</li>
+<li><p>如何区分HTML与HTML5</p>
+<p> 答： 从Doctype、HTML5语义化标签区分</p>
+</li>
+<li><p>对HTML语义化的理解</p>
+<p> 答： ①构造良好的文档结构，在CSS失效时也能以文档方式渲染内容②便于SEO③便于爬虫解析④便于读懂代码，减少维护难度</p>
+</li>
+<li><p>浏览器是怎么对HTML5的离线储存资源进行管理和加载的</p>
+<p> 答： 在线的情况下，浏览器发现HTML头部有manifest属性，它会请求manifest文件，如果是第一次访问，那么浏览器就会根据manifest文件的内容下载相应的资源并且进行离线存储。如果已经访问过并且资源已经离线存储了，那么浏览器就会先使用离线的资源加载页面，然后浏览器会对比新的manifest文件与旧的manifest文件，如果文件没有发生改变，就不做任何操作，如果文件改变了，那么就会重新下载文件中的资源并进行离线存储。 离线的情况下，浏览器就直接使用离线存储的资源。</p>
+</li>
+<li><p>cookies，sessionStorage 和 localStorage 的区别</p>
+<p>答：①相同点：都是保存在浏览器端，且同源的。②大小：cookies大小为4K以下，sessionStorage、localStorage 可以达到5M或以上③访问浏览器：每次http请求都会携带cookie，而另外两个不会主动发送，仅在本地保存④数据有效期：Cookie由服务器设置过时时间，sessionStorage在浏览器关闭前一直有效，localStorage直到你手动清除。⑤作用域不同：sessionStorage不能在不同的浏览器窗口中共享，即使是同一个页面；localStorage 在所有同源窗口中都共享；Cookie也是在所有同源窗口中共享。</p>
+</li>
+<li><p>iframe有哪些缺点</p>
+<p>答：iframe会阻塞主页面的Onload事件、不利于SEO、iframe和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。</p>
+</li>
+<li><p>label的作用是什么？是怎么用的？</p>
+<p>答：定义表单控制间的关系，点击label能自动将焦点转移到对应表单上    </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;label for=&quot;example&quot;&gt;一个表单label&lt;/label&gt;</div><div class="line">&lt;input name=&quot;example&quot; /&gt;</div></pre></td></tr></table></figure>
+</li>
+<li><p>网页验证码是干嘛的，是为了解决什么安全问题？</p>
+<p>答： 区分是人还是计算机在登录；解决论坛灌水、刷票、恶意爆破密码等问题。</p>
+</li>
+<li><p>什么是渐进式渲染 (progressive rendering)</p>
+<p>答：通过暂时只渲染第一屏主体内容, 而下方或者更详细数据在客户端抓取后才渲染来。就是说, 服务端渲染一部分, 客户端加载一部分, 从而提升渲染性能。</p>
+</li>
+<li><p>页面渲染流程说一下</p>
+<p>答：①解析HTML文档②构建DOM树③下载资源（CSS、JS等）④构建CSS树⑤构建rendom树并渲染⑥执行JS（注：这些操作没有严格的先后顺序）</p>
+</li>
+<li><p><meta>标签各属性作用</p>
+<p> 答： ①charset - 定义编码格式，常用UTF-8②content：定义与 http-equiv （content-type expires refresh set-cookie）或 name （author description keywords generator evised others）属性相关的元信息。</p>
+</li>
+<li><p>浏览器缓存说一下</p>
+<p>答：①强缓存：Expires 表明过期的时间 ，问题：浏览器可能与服务器时间不同② cache-control,就说三个参数 1.max-age:设置缓存的最大时间，如果存在cache-control: max-age 会忽略 Expires 2.no-cache:告诉浏览器忽略资源的缓存副本，强制每次请求直接发送给服务器，拉取资源，但不是“不缓存” 3.no-store: 不缓存 ②协商缓存：last-modified（response）表示资源上次修改的时间，通过request Header中的If-Modified-Since发起请求，Etag (response),表示资源的内容标识（通常为hash或md5) 通过If-None-Match(客户端保留的资源内容标识)。</p>
+</li>
+</ol>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><ol>
+<li><p>圣杯布局/双飞翼布局的实现</p>
+<p> 答：看示例，外加一种flex布局</p>
+</li>
+<li><p>垂直居中布局如何实现</p>
+<p> 答：看示例</p>
+</li>
+<li><p>权重的计算（CSS优先级算法如何计算）</p>
+<p> 答：标签为1，类名为10，id为100，内联样式为1000，如 div .test1 #555 = 1 + 10 +100 = 111。如果加上！import，权重为最高。</p>
+</li>
+<li><p>box-sizing的各个值（对盒模型的理解）</p>
+<p> 答：①content-box: 修改width/height的时候只修改content的width/height②padding-box: 修改width/height的时候修改content+padding的width/height③border-box:修改width/height的时候修改content+padding+border的width/height④inherit：从父元素里继承box-sizing</p>
+</li>
+<li><p>float有什么影响，如何去除float的影响</p>
+<p> 答：影响：造成父元素的高度塌陷，背景不能显示完全，边框不能撑开，margin值不能正常显示。最常用的方法有：.clear::after{display:table;content:’’;clear:both;overflow:hidden} .clear{*zoom:1}</p>
+</li>
+<li><p>描述下BFC</p>
+<p> 答：块级格式化上下文，BFC子元素不会影响外部元素，可以把BFC看成一个盒子，盒子里的东西不能影响外面的东西。触发BFC的条件：满足以下任意一项即可：①body根元素②float不为None③position：absolute/fixed④overflow:不为visible⑤display:inline-block/table-cells/flex等；它的作用是：①不会被浮动元素遮盖②包裹浮动元素③避免父子元素margin合并</p>
+</li>
+<li><p>class与id的区别</p>
+<p> 答：①权重不同②class一般用于多个元素重复使用的样式、id用于一个元素的样式</p>
+</li>
+<li><p>浏览器如何判断一个元素匹配某个CSS选择器（浏览器是怎样解析CSS选择器的）</p>
+<p> 答：从右往左匹配，如果在匹配过程中遇到不同的，就放弃该次匹配，如要匹配body .main .example</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;main&quot;&gt;&lt;span class=&quot;example&quot;&gt;&lt;/span&gt;&lt;/div&gt; /* ① */</div><div class="line">	&lt;div class=&quot;mainAnother&quot;&gt;&lt;span class=&quot;example&quot;&gt;&lt;/span&gt;&lt;/div&gt;  /* ② * /</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure>
+<p> ①会先找到.example 然后找到其父元素.main,再到body，发现无错误，所以应用该样式②会先找到.example 然后找到其父元素.mainAnother,发现不匹配，放弃该次匹配</p>
+</li>
+<li><s>响应式设计与自适应设计的不同</s></li>
+<li><p>display有哪些值分别有什么作用</p>
+<p>答：inherit：继承父类；block 块级；inline-block 内联块状；table ;表格；none 隐藏；flex 弹性盒子布局。</p>
+</li>
+<li><p>absolute与relative定位原理</p>
+<p>答： absolute相对离自己最近的第一个定位不为static的父元素定位，relative相对原位置（文档流定位）。</p>
+</li>
+<li><p>解释下flexbox以及其应用场景</p>
+<p>答： 弹性盒子布局适用于响应式设计，不适用于移动端，整体网页</p>
+</li>
+<li><p>元素横、竖向的百分比设定是相对于什么</p>
+<p>答： ①相对于父元素的width：width，left，right，padding，margin；<br>②相对于父元素的height：height，top，bottom，padding，margin；③相对于继承字号：font-size;④line-height:相对于父元素高度</p>
+</li>
+<li><p>::before 和 :after中双冒号和单冒号区别</p>
+<p>答：①双冒号是伪元素②单冒号是伪类。伪类存在的意义是格式化DOM树以外的信息（如:hover）以及获取不能被常规CSS选择器获取到的信息(如:first-child)。伪元素可以创建一些文档语言无法创建的虚拟元素。（如：after），他们的区别是：伪类其实是弥补了CSS选择器的不足，用来更方便地获取信息,而伪元素本质上是创建了一个虚拟容器(元素)，我们可以在其中添加内容或样式。</p>
+</li>
+<li><p>style标签写在body后与body区别</p>
+<p>答： body前先渲染，body后后渲染</p>
+</li>
+<li><p>对line-height的理解</p>
+<p>答： ①line-height通过line-boxes实现，line-boxes的高度取决于它的包裹元素的最高高度，因此line-height也是具有高度的。②vertical-align的百分比是基于line-height来计算的。③非阅读站推荐设置行高为20px，阅读站推荐设置为1.5/1.6（by张鑫旭）</p>
+</li>
+<li><p>什么是媒体查询</p>
+<p>答： ①@media only screen and (max-width:设定宽度){xxx} 小于该设定宽度时应用设定的样式 ②@media only screen and (min-width:设定宽度){xxx} 大于该设定宽度时应用设定的样式</p>
+</li>
+<li><p>CSS优化、提高性能的方法有哪些</p>
+<p>答： ① 代码压缩 ② 避免CSS表达式 ③ 少用import ④ 渲染性能优化</p>
+</li>
+<li><p>margin和padding分别适合什么场景使用</p>
+<p>答： 外边距margin改变元素与元素之间的间距，padding改变的是元素内容与元素框之间的间距，所以称为补白、内边距。</p>
+</li>
+<li><p>link 和@import 的区别</p>
+<p>答： ①link 是HTML的标签，兼容性比@import强（@import在IE5以下不兼容）②加载顺序：@import的内容会等到页面全部被下载完再被加载</p>
+</li>
+<li><p>流式布局与响应式布局的区别</p>
+<p>答： ①流式布局在CSS2时代就有，主要是靠百分比进行排版，可以在不同分辨率下显示相同的版式②响应式布局主要应该媒体查询，可以在不同的分辨率下对元素重新设定样式（不仅仅是尺寸），可以在不同屏幕下显示不同的版式。</p>
+</li>
+<li><p>行内元素有哪些？块级元素有哪些？ 空(void)元素有哪些？</p>
+<p>答：①行内：input、image、span、a、b、select、strong②块级：div、p、h1-h4…、ul、ol、li、dt、dd、dl③空元素：br、hr、link、meta</p>
+</li>
+<li><p>css层叠上下文及顺序</p>
+<p>答：元素按层叠顺序展示谁能覆盖在表面，七阶顺序：①层叠上下文的background/border②负的z-index③block块状水平盒子④float浮动盒子⑤inline/inline-block水平盒子⑥z-index:auto/0 ⑦正z-index</p>
+</li>
+<li><p>css3新特性有哪些？</p>
+<p>答：选择器、圆角（border-radius）、多列布局（multi-column layout）、阴影和反射（Shadow\Reflect）、文字特效（text-shadow）、文字渲染（text-decoration）、线性渐变（gradient）、旋转（transform）、缩放（transfrom）、定位（translate）、动画（animation）</p>
+</li>
+<li><p>块级元素与水平元素的区别</p>
+<p>答：块级元素：①独占一行②未设置高度时，高度会自动扩展以包裹处于<strong>常规流</strong>中的子元素③如果没有设宽度，会自动填充满父元素④可以使用margin/padding⑤vertical-align无效</p>
+<pre><code>水平元素：①水平方向上根据direction布局②不会独占一行（除非宽度超出）③受white-space控制换行规则④宽高对非替换行内元素无效（如img）,宽由其内容决定，高由line-height决定，非替换元素则由height,width,margin,padding等确定⑤浮动或决定定位时会转为block⑥vertical-align有效
+</code></pre></li>
+</ol>
+<h2 id="JavaScript"><a href="#JavaScript" class="headerlink" title="JavaScript"></a>JavaScript</h2><ol>
+<li><p>JavaScript基本类型说一下</p>
+<p> 答：ES6之前为5种基本类型：String，Number，Boolean，NULL，Undefined,ES6之后加多一种Symbol（独一无二的值）</p>
+</li>
+<li><p>什么是原型，原型链</p>
+<p> 答：①原型是构造函数的一个实例（ new XXX() ）的<strong>proto</strong>,XXX.prototype就是原型对象，在默认情况下，所有的原型对象都会自动获得一个 constructor（构造函数）属性，这个属性（是一个指针）指向 prototype属性所在的函数（XXX），原型对象的用途是为每个实例对象存储共享的方法和属性。②原型指针<strong>proto</strong>，该指针指向上一层的原型对象，而上一层的原型对象的结构依然类似，这样利用<strong>proto</strong>一直指到Object的原型对象，而原型对象Object.prototype.<strong>proto</strong> = null表示原型链的最顶端，这样就构成了原型链，同时也解释了为什么所有的javascript对象都具有Object的基本方法。</p>
+</li>
+<li><p>怎么看AMD与CommonJS</p>
+<p> 答：①相同：两者都是为了实现模块化编程而出现的②：区别：CommenJS适用于<strong>服务器端</strong>（如Node.js）同步加载不同模块文件。AMD：异步模块定义，适用于<strong>浏览器端</strong>的一种模块加载方式（js中最典型的异步例子就是ajax）目前，主要有两个Javascript库实现了AMD规范：<a href="http://requirejs.org/" target="_blank" rel="external">require.js</a>和<a href="https://github.com/cujojs/curl" target="_blank" rel="external">curl.js</a>。</p>
+</li>
+<li><p>什么是闭包，如何使用，为什么要使用</p>
+<p> 答：在一个函数内部<strong>返回（return）</strong>一个函数，该函数能访问其函数内部变量。使用闭包是为了读取其函数内部的变量，另一个是让变量常驻内存中，不让它被垃圾回收机制回收。由于闭包会使得函数中的变量都被保存在内存中，内存消耗很大，所以不能滥用，否则会造成网页的性能问题，且在IE下容易造成内存泄露。</p>
+</li>
+<li><p>以下代码的区别：<code>function Person(){}</code>、<code>var person = function()</code>、<code>var person = new Person()</code></p>
+<p> 答：①第一种为函数声明，由于函数和变量提升的行为，它的函数声明与赋值（{}里面的内容）都会被提前,即函数声明过程在整个程序执行之前的预处理就完成了，所以只要处于同一个作用域，就可以访问到，即使在定义之前调用它也可以。②第二种为函数表达式，它与第一种的区别是，它只提升函数声明（即person），匿名函数只有在被调用时才被初始化。③是创建一个Person对象的实例给person</p>
+</li>
+<li><p>Javascript创建对象的几种方式</p>
+<p> 答：</p>
+<p> ① Object构造函数创建</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var Person = new Object();</div><div class="line">Person.name = &apos;Dcison&apos;</div></pre></td></tr></table></figure>
+<p> ② 使用对象字面量表示法</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var Person = &#123;</div><div class="line">	name = &apos;Dcison&apos;,</div><div class="line">	age = 10</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p> ③ 工厂模式</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var factory = function(name,age)&#123;</div><div class="line">	var Person = new Object()</div><div class="line">	Person.name = name</div><div class="line">	Person.age = age</div><div class="line">	return Person</div><div class="line">&#125;</div><div class="line">var peson = factory(&apos;Dcison&apos;,10)</div></pre></td></tr></table></figure>
+<p> ④ 构造函数</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var Person = function(name,age)&#123;</div><div class="line">	this.name = name</div><div class="line">	this.age = age</div><div class="line">&#125;</div><div class="line">var person = new Person( &apos;Dcison&apos;,10)</div></pre></td></tr></table></figure>
+<p> ⑤ 原型构造</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var Person()&#123;&#125;</div><div class="line">Person.prototype.name = &apos;Dcison&apos;</div><div class="line">Person.prototype.age= 10</div><div class="line">var person = new Person()</div></pre></td></tr></table></figure>
+<p> ⑥ 组合构造（构造+原型）目前在 ECMAScript中使用最广泛、认同度最高的一种创建自定义类型的方法</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">var Person = function (name,age)&#123;</div><div class="line">	this.name = name</div><div class="line">	this.age = age</div><div class="line">&#125;	</div><div class="line">Person.prototype = &#123;</div><div class="line">	constructor: Person,</div><div class="line">	country: &apos;china&apos;</div><div class="line">&#125;</div><div class="line">person1 = new Person (&apos;dcison&apos;,10)</div><div class="line">person2 = new Pesron(&apos;MZI&apos;,11)</div><div class="line">person1.country == person2.country //true</div></pre></td></tr></table></figure>
+</li>
+<li><p>JavaScript有几种类型的值？</p>
+<p> 答：6种基本类型：String、Number、Undefined、Boolean、Null、Symbol，基本类型保存在栈中，一种复杂类型：Object，保存在堆中。</p>
+</li>
+<li><p>Javascript作用链域的理解</p>
+<p> 答：①函数作用域：函数内的区域，就是这个函数的作用域，变量和函数在这个区域都可以访问操作。最外层函数外的区域叫全局作用域，函数内的区域叫局部作用域。②变量作用域：变量所在的区域，就是这个变量的作用域，变量在这个区域内可以被访问操作。在全局作用域上定义的变量叫全局变量，在函数内定义的变量叫局部变量。③全局函数无法查看局部函数的内部细节，但局部函数可以查看其上层的函数细节，直至全局细节。 当需要从局部函数查找某一属性或方法时，如果当前作用域没有找到，就会上溯到上层作用域查找， 直至全局作用域，这种组织形式就是作用域链。</p>
+</li>
+<li><p>This对象的理解</p>
+<p> 答：①this 默认绑定全局对象②一个对象下含一个函数的时候，我们称函数的this被隐式绑定到这个对象里，且在一串对象属性链中，this绑定的是最内层的对象③可以通过call，apply，bind显示绑定;④new，this指向new出来的对象。总结：this总是指向函数的直接调用者（而非间接调用者）；如果有new关键字，this指向new出来的那个对象；在事件中，this指向触发这个事件的对象，特殊的是，IE中的attachEvent中的this总是指向全局对象Window；</p>
+</li>
+<li><p>eval做什么的</p>
+<p>答：它的功能是把对应的字符串解析成JS代码并运行。不推荐使用，非常耗性能。</p>
+</li>
+<li><p>什么是window对象? 什么是document对象?</p>
+<p>答：window对象指浏览器打开的窗口，document对象是HTML文档的一个只读引用，是window对象的一个属性。</p>
+</li>
+<li><p>null和underfined的区别</p>
+<p>答：①null指空的对象，表示是一个没有任何属性和方法的对象，undefined指未定义值，表示此处应该有一个值，但是还没有定义。②undefined不是有效的json值，null是③type null 是Object ，type undefiend 是 undefined ④Number(null) 是0，Number（undefined） 是NaN。</p>
+</li>
+<li><p>如何判断一个对象是否属于某个类？</p>
+<p>答：①实例 instanceof  类名② 实例.<strong>proto</strong> == 类名.prototype ③ 实例.<strong>proto</strong>.constructor == 类名</p>
+</li>
+<li><p>new操作符具体干了什么</p>
+<p>答：①创建一个新对象 ②将构造函数的作用域指向新对象（所以this指向了该对象）③执行构造函数中的代码（赋予新对象属性）④返回该对象</p>
+</li>
+<li><p>说下对JSON的了解</p>
+<p>答：json(javascript object notation)全称是javascript对象表示法，它是一种数据交换的文本格式，而不是一种编程语言，目的是取代繁琐笨重的XML格式。它与JS对象字面量表示法的区别是，json的键名也必须加引号，字符串必须使用双引号表示，不能使用单引号。数值必须以十进制表示，且不能使用NaN和Infinity。</p>
+</li>
+<li><p>js延迟加载的方式有哪些</p>
+<p>答：①setTimeout②在<code>&lt;script&gt;</code>元素中设置 <code>defer</code> 属性，等于告诉浏览器立即下载，但延迟执行③动态创建<code>&lt;script&gt;</code>标签插入js④把js代码放body最后</p>
+</li>
+<li><p>Ajax 是什么? 如何创建一个Ajax？</p>
+<p>答：①Ajax全称是Asynchronous JavaScript and XML(异步的JavaScript与XML)，它是一种无需重新加载整个页面的情况的下更新部分页面内容的技术。所谓异步，在这里简单地解释就是：向服务器发送请求的时候，我们不必等待结果，而是可以同时做其他的事情，等到有了结果我们可以再来处理这个事。②var xmlhttp = window.XMLHttpRequest?new XMLHttpRequest():new ActiveXObject(‘Microsoft.XMLHTTP’) //IE6、7</p>
+</li>
+<li><p>同步和异步的区别?</p>
+<p>答：JavaScript是单线程。单线程就意味着，所有任务需要排队，前一个任务结束，才会执行后一个任务，于是就有一个概念——任务队列。而任务分为两种，同步任务，异步任务。同步任务指在主线程上排队执行的任务，只有等前一个任务完成后，才能执行当前的任务。异步任务不进入主线程，而进入任务队列，只有等主线程的任务处理完毕才处理在任务队列上的任务，该任务才进入主线程执行。</p>
+</li>
+<li><p><code>.call</code> 和 <code>.apply</code> 的区别是什么？</p>
+<p>答： 他们都是用于改变作用域，第一个传的参数都是要改变的作用域，他们的区别在于第二个参数，call传递给函数的参数必须逐个例举出来，apply传递参数数组。</p>
+</li>
+<li><p>说下你知道的改变作用域的方法</p>
+<p>答：call，apply，箭头函数，new</p>
+</li>
+<li><p>什么是变量声明提升</p>
+<p>答： JavaScript 中，变量及函数声明都将被提升到函数的最顶部。即JavaScript 中，变量可以在使用后声明。</p>
+</li>
+<li><p>描述下事件冒泡机制</p>
+<p>答：事件从触发的元素开始逐级向上传递，直到document。与它区别的是事件捕获，事件从document出发，逐级向下传递，直到触发事件的元素，它用意在于在时间到达预定目标之前捕获它。我们通常用事件冒泡，很少有人使用事件捕获模型。</p>
+</li>
+<li><p>“attribute” 和 “property” 的区别是什么</p>
+<p>答：attribute（译为特性）是HTML标签上的特性，它的值只能够是字符串；property（译为属性）是DOM中的属性，是JavaScript里的对象；property能够从attribute中同步的内容，而attribute不会同步property上的值，即说明attribute和property之间的数据绑定是单向的（attribute-&gt;property），更改property和attribute上的任意值，都会将更新反映到HTML页面中。</p>
+</li>
+<li><p>documen.write和 innerHTML的区别?</p>
+<p>答：①write是DOM方法,向文档写入HTML表达式或JavaScript代码，可列出多个参数，参数被顺序添加到文档中 ；innerHTML是DOM属性,设置或返回调用元素开始结束标签之间的HTML元素②两者都可向页面输出内容,innerHTML比document.write更灵活，且document.write会触发重排。③通过document.write插入<code>&lt;script&gt;</code>元素会自动执行其中的脚本；大多数浏览器中，通过innerHTML插入<code>&lt;script&gt;</code>元素并不会执行其中的脚本。</p>
+</li>
+<li><p>DOM操作——怎样添加、移除、移动、复制、创建和查找节点?</p>
+<p>答：①添加节点：document.appendChild()②移除：document.removeChild()③移动：目标节点的父节点.append(要移动的节点)④复制：复制节点.cloneNode(boolean) true为深拷贝（该节点的所有后代节点也拷贝），否则为浅拷贝（仅拷贝该节点）⑤创建：document.createElement(要创建的节点元素)，document.createTextNode()创建一个文本节点，createDocumentFragment()创建一个新的空白的文档片段⑥查找节点：document.getElementsByClassName(‘查找元素的class’)，document.getElementsByTagName(‘标签名称’)，document.getElementById(‘查找元素的id’)，document.querySelector(‘查找元素的CSS标签’)</p>
+</li>
+<li><p><code>==</code> 和 <code>===</code> 有什么不同？</p>
+<p>答：==是弱比较，会在比较时进行类型转换，===是严格比较，在比较时不进行类型转换。</p>
+</li>
+<li><p>为什么不推荐扩展 JavaScript 内置对象？</p>
+<p>答： 因为可能某天浏览器或JS就实现了该对象，会造成冲突，对以前用过该对象的项目造成较大成本的维护影响。且扩展之后容易造成冲突（如果他人也扩展），这很容易造成混乱。</p>
+</li>
+<li><p>对ECMAScript6的了解</p>
+<p>答：es6是一个新的标准，它包含了许多新的语言特性和库，是JS最实质性的一次升级。比如’箭头函数’、’字符串模板’、’generators(生成器)’、’async/await’、’解构赋值’、’class’，块级作用域let等等，还有就是引入module模块的概念。</p>
+</li>
+<li><p>ECMAScript6 怎么写class，为什么会出现class这种东西?</p>
+<p>答：ES6的class其实是一个语法糖，与ES5有点类似</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">class Person()&#123;</div><div class="line">		constructor(name,age)&#123;</div><div class="line">			this.name = name</div><div class="line">			this.age = age</div><div class="line">		&#125;</div><div class="line">		sayHello = ()=&gt;&#123;</div><div class="line">			return `Hello I&apos;m $&#123;this.name&#125;,I&apos;m $&#123;this.age&#125; years old.`</div><div class="line">		&#125;</div><div class="line">&#125;</div><div class="line">var person = new Person(&apos;dcison&apos;,10)</div></pre></td></tr></table></figure>
+<p>不知道，存在即必然吧？或者是C++等工程师不习惯？</p>
+</li>
+<li><p>JavaScript 怎么实现一个类？怎么实例化这个类?</p>
+<p>答：请看js第六题，六种方法</p>
+</li>
+<li><p>说下深拷贝、浅拷贝的理解</p>
+<p>答：JS 中的浅拷贝与深拷贝，只针对复杂数据类型（<code>Object</code>，<code>Array</code>）的复制问题。浅拷贝是拷贝引用，拷贝后的引用都是指向同一个对象的实例，彼此之间的操作会互相影响（赋值就是一种浅拷贝）。深拷贝在堆中重新分配内存，并且把源对象<em>所有属性</em>都进行新建拷贝，以保证深拷贝的对象的引用图不包含任何原有对象或对象图上的任何对象，即拷贝后的对象与原来的对象是完全隔离，互不影响。（如Object.assign(),JSON.parse(),JSON.stringify()）</p>
+</li>
+<li><p>ES6中箭头函数的了解</p>
+<p>答：①不需要function关键字②可以忽略return关键字③箭头函数里的this对象是定义时的所在的对象，所以他不能用于构造函数，对象字面量里设置this,对象原型上设置等④无法调用arguments对象，可以用rest参数代替⑤不能用yield命令，即不允许用做generator函数。</p>
+</li>
+<li><p>JS 继承方式有哪些：</p>
+<p>答：</p>
+<p>①原型链继承</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">function Super()&#123;</div><div class="line">	this.name = &apos;ssss&apos;</div><div class="line">&#125;</div><div class="line">function Child()&#123;&#125;</div><div class="line">Child.prototype = new Super()</div><div class="line">var instance = new Child()</div></pre></td></tr></table></figure>
+<p>问题：原型链继承的问题，修改实例引用的属性时，其他相应的实例引用属性也会改变<br>②构造函数继承</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function Super()&#123;</div><div class="line">	this.name = &apos;sss&apos;</div><div class="line">&#125;</div><div class="line">Super.prototype.sayName = function()&#123;</div><div class="line">	console.log(this.name)	</div><div class="line">&#125;</div><div class="line">function Child()&#123;</div><div class="line">	Super.call(this)</div><div class="line">&#125;</div><div class="line">var instance = new Child()</div></pre></td></tr></table></figure>
+<p>问题：无法继承原型链上的方法，属性（即案例里的instance不能使用sayName）<br>③组合继承（构造+原型链）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function Super()&#123;</div><div class="line">	this.name = &quot;sss&quot;</div><div class="line">&#125;</div><div class="line">Super.prototype.sayName = function ()&#123;</div><div class="line">	console.log(this.name)</div><div class="line">&#125;</div><div class="line">function Child () &#123;</div><div class="line">	Super.call(this)</div><div class="line">&#125;</div><div class="line">Child.prototype = new Super()</div><div class="line">var instance = new Child()</div></pre></td></tr></table></figure>
+<p>问题：组合式继承中，父类的构造函数将被调用两次<br>④寄生式继承</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function SuperFactory(obj)&#123;</div><div class="line">	var tmp = Object(obj)</div><div class="line">	tmp.sayName = function()&#123;</div><div class="line">		console.log(this.name)</div><div class="line">	&#125;</div><div class="line">	return tmp</div><div class="line">&#125;</div><div class="line">var person = &#123;</div><div class="line">	name: &apos;sss&apos;</div><div class="line">&#125;</div><div class="line">var instance = SuperFactory(person)</div></pre></td></tr></table></figure>
+<p>问题：无法做到函数的复用<br>⑤寄生组合式继承</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">function SuperFactory(child,sup)&#123; //用于继承</div><div class="line">	var tmp = Object.create(sup.prototype) //创建对象副本</div><div class="line">	tmp.constructor = sup //弥补重写原型失去的默认constructor属性</div><div class="line">	child.prototype = tmp</div><div class="line">&#125;</div><div class="line">function Super(name)&#123;  </div><div class="line">	this.name = name</div><div class="line">	this.friends = [&apos;小红&apos;,&apos;小强&apos;]</div><div class="line">&#125;</div><div class="line"> Super.prototype.sayName = function()&#123;</div><div class="line">	return this.name</div><div class="line"> &#125;</div><div class="line">function Child(name)&#123;</div><div class="line">	Super.call(this,name)</div><div class="line">&#125;		</div><div class="line">SuperFactory(Child,Super)</div><div class="line">var a = new Child(&apos;喵&apos;)</div><div class="line">var b = new Child(&apos;汪&apos;)</div><div class="line">a.friends.push(&apos;汪汪汪&apos;)</div><div class="line">console.log(a.friends,b.friends)</div><div class="line">//[ &apos;小红&apos;, &apos;小强&apos;, &apos;汪汪汪&apos; ] [ &apos;小红&apos;, &apos;小强&apos; ]</div><div class="line">console.log(a.sayName(),b.name)</div><div class="line">//喵 汪</div></pre></td></tr></table></figure>
+<p>寄生组合式继承解决了组合式继承调用两次超类构造函数的问题<br>⑥ES6继承<br>ES6子类继承父类，必须在constructor函数的第一行调用super();之后才能使用关键字this，这是因为子类中没有自己的this对象，而是继承父类的this对象，然后才能为这个this添加相应的属性和方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">class Super&#123;</div><div class="line">	constructor(name)&#123;</div><div class="line">		this.name = name	</div><div class="line">	&#125;</div><div class="line">&#125;</div><div class="line">class child extends Super&#123;</div><div class="line">	constructor()&#123;</div><div class="line">		super()</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>对属性描述符的了解</p>
+<p>答：属性描述符对象有4个属性：①configurable：可配置性，控制着其描述的属性的修改，表示能否修改属性的特性，能否把属性修改为访问器属性，或者能否通过delete删除属性从而重新定义属性。默认值为true。②enumerable：可枚举性，表示能否通过for-in遍历得到属性。默认值为true。③writable：可写性，表示能否修改属性的值。默认值为true。④ value：数据属性，表示属性的值。默认值为undefined。</p>
+</li>
+<li><p>什么是内存泄露，怎么解决该问题</p>
+<p>答：内存泄露是指一块被分配的内存既不能使用，又不能回收，直到浏览器进程结束。常见原因：①循环引用②自动类型装箱转换（IE比较常见）③某些DOM。操作常见解决方法：①显示类型转换②避免循环引用③使用’垃圾箱’。</p>
+</li>
+<li><p>什么是事件委托</p>
+<p>答：事件委托避免对特定的每个节点添加事件监听器；相反，事件监听器是被添加到它们的父元素上。事件监听器会分析从子元素冒泡上来的事件，找到是哪个子元素的事件。减少了DOM的操作，提高了性能。</p>
+</li>
+<li><p>什么是执行上下文</p>
+<p>答：可以把执行上下文当做是一个对象，它含有 VO,this,作用域链三个属性。每当调用一个函数时（未执行前），一个新的执行上下文就会被创建出来，此时进行的操作有：①进行变量对象的创建，包括：建立arguments，检查函数声明，检查变量声明等②确定作用域链③确定this指向。等在函数执行时，一行一行地运行代码，才给变量对象中的对应属性赋值。</p>
+</li>
+</ol>
+<h2 id="前端工具"><a href="#前端工具" class="headerlink" title="前端工具"></a>前端工具</h2><ol>
+<li><p>了解bower、npm、yeoman、grunt、gulp么？</p>
+<p> 答：bower/npm 是包管理工具，现在热门的还有yarn；grunt、gulp是前端工具，结合插件，合并，压缩，编译Sass/Less等。yeoman不会再用了吧</p>
+</li>
+<li><p><s>一个npm包必要的字段有哪些</s></p>
+</li>
+<li><p>说说Git的特点</p>
+<p> 答：①版本库本地化，支持离线提交，相对独立不影响协同开发。②更少的仓库污染③把内容按元数据方式存储，完整克隆版本库④支持快速切换分支，并发合并性能好⑤分布式版本库，无单点故障，内容完整性好</p>
+</li>
+<li><p>Node.js的适用场景</p>
+<p> 答：①高并发②I/O密集</p>
+</li>
+<li><p>什么是前端路由?什么时候适合使用前端路由? 前端路由有哪些优点和缺点?</p>
+<p> 答：②前端路由更多用在单页应用上, 也就是SPA, 因为单页应用, 基本上都是前后端分离的, 后端自然也就不会给前端提供路由。③从性能和用户体验的层面来比较的话，后端路由每次访问一个新页面的时候都要向服务器发送请求，然后服务器再响应请求，这个过程肯定会有延迟。而前端路由则不会，会提升用户体验。（优点）但是使用浏览器的前进，后退键的时候会重新发送请求，没有合理地利用缓存。（缺点）</p>
+</li>
+<li><p>怎么用浏览器的各种工具来调试和debug代码</p>
+<p> 答：浏览器开发工具，包括react插件，redux插件等。</p>
+</li>
+<li><p>如何测试前端代码? 知道BDD, TDD, Unit Test么? 知道怎么测试你的前端工程么？</p>
+<p> 答：Mockserver。。。</p>
+</li>
+<li><p>前端模板干什么用的，说一下你知道的，并怎么用</p>
+<p> 答：模板可以大大节省代码量来重复生成结构相同的HTML，前端模板有mustache等。。。</p>
+</li>
+<li><p>说一下你对Webpack的了解</p>
+<p>答：webpack是一款模块加载兼打包工具，它可以将js、jsx、coffee、样式sass、less，图片等作为模块来使用和处理。以commonJS的形式来书写脚本，对AMD、CMD的支持也很全面，方便旧项目的迁移。能被模块化的不止是JS了。能替代部分grunt/gulp的工作，例如打包，压缩混淆，图片转base64等。扩展性强，插件机制完善，支持React热拔插。</p>
+</li>
+<li><p>说下你用过的框架的特点（React、Vue、Jquery）</p>
+<p>答：React声明式设计， Virtual DOM树，单向数据流，组件化编码，客户端与服务器渲染。</p>
+</li>
+<li><p>React的生命周期</p>
+<p>答：</p>
+<p>1）初始化中：①getDefaultProps 获取组件属性的默认值②getInitialState()定义初始状态，这两部前不允许使用this.state 和 setState③componentWillMount（）只在初始化时调用一次，可以使用setState方法，并立即更新state④render（）开始渲染，不能在这里使用setState()，否则会无限循环，如果Render中包含其他的子组件，那么子组件的生命周期才开始进行。⑤componentDidmount(),所有组件都加载完毕（包括子组件），可以操作Dom。</p>
+<p>2）props发生改变：①componentWillReceiveProps（），比较旧props与新props，然后进行setstate(),如果父组件发生了该方法，子组件也会触发②shouldComponentUpdate(),接受了新的props或state后触发，可以通过返回true或false来控制后面的生命周期是否触发③componentWillUpdate（），在接收到新props，state或shouldComponent返回true后触发，不能在其中使用setstate()④重新render⑤componentDidupdate（）全部组件更新完后触发。</p>
+<p>3） state更新：porps更新的②-④步</p>
+<p>4）使用Redux的情况：基本不需要透过生命周期去做setState这样的状态管理了，基本都是用props来传递来重新渲染，仅需要注意在哪个生命周期时候触发action，比如需要进行ajax请求时候一般都是在componentDidMount和componentWillReceiveProps时候进行，在reducer中处理完，然后在通过props传入组件执行组件的更新周期。</p>
+</li>
+<li><p>React/Vue的virtual dom实现原理</p>
+<p>答：Virtual DOM 本质是在JS与DOM之间做了一个缓存，JS只操作这个缓存（Virtual DOM），最后的时候才写入DOM中。Virtual DOM的步骤：①用Js对象结构表示DOM结构，然后用这个结构构建真正的DOM树，插入到文档中。②当状态变更时，重新构造一棵新的对象树，新旧树对比，记录两棵树的差异。③把差异应用到步骤①构建的DOM树上，视图就更新了。</p>
+</li>
+<li><p>Express的特点</p>
+<p>答：①提供丰富的HTTP快捷方法和任意排列组合的Connect中间件②在node已有的特性上二次开发，扩展web所需功能。</p>
+</li>
+<li><p>什么是雪碧图，适合在什么地方使用</p>
+<p>答：雪碧图是一种CSS图片合成技术，它是将各种小图片合成一张大图，然后通过background-position和元素尺寸调节需要显示的背景图案。适合在兼容不支持 data URI 的浏览器时适合用。具有①减少HTTP请求数，极大地提高页面加载速度②增加图片信息重复度，提高压缩比，减少图片大小③ 更换风格方便，只需在一张或几张图片上修改颜色或样式即可实现等优点。缺点是：图片维护麻烦，修改其中一个可能需要重新布局整个图片。</p>
+</li>
+<li><p>说下对Redux/Flux的理解</p>
+<p>答：flux 和 redux做的事，是为了保证每一个动作（状态的更改）都能映射到确切的状态，在尤其是逻辑非常庞杂的时候维护和控制单向数据流，相当于一个数据状态容器。数据流向是 action -&gt; reducer -&gt; store -&gt; view - &gt;action -&gt;循环。</p>
+</li>
+<li><p>说下MVC、MVVM的区别</p>
+<p>答：MVC中的M（Model）指数据的缓存，V（View）指渲染的视图，也负责接收用户的交互操作，C（Controler）指用户与网络之间的交互的handler。MVVM中分为M（Model） V （View）VM （ViewMode），MVVM中M与V无联系，他们通过VM进行交互，即VM与M交互是双向的，即视图的数据变化会同时修改数据源，也会立即作用到View上。也就是用数据“绑定”的形式让数据更新的事件让其自动地双向同步。</p>
+</li>
+<li><p>MockServer特点</p>
+<p>答： Mock Server是一种通过接口文档进行测试，将接口与数据进行分离，通过条件和结果数据进行用户行为的模拟。</p>
+</li>
+<li><p>用过哪些CSS预处理器，说下其特点</p>
+<p>答：用过Less。它支持变量，混合（类似函数定义一个属性集合），嵌套等等功能，让CSS像编程语言一样，使得对CSS的管理更加容易，重复的代码量可以减少。</p>
+</li>
+<li><p>MongoDB如何优化</p>
+<p>答：①造出慢语句②使用explain分析③创建索引提高查询性能④使用稀疏索引来减少空间占用⑤读写分离</p>
+</li>
+<li><p>React组件的优化</p>
+<p>答：①使用上线构建（Production Build）：会移除脚本中不必要的警告和报错，减少文件体积。    ② 避免重绘 （Avoid Reconciliation）：重写 shouldComponentUpdate 函数，手动控制是否应该调用 render 函数进行重绘③尽可能的使用 Immutable Data（ The Power Of Not Mutating Data）：尽可能的不修改数据，而是重新赋值数据。这样的话，在检测数据对象是否发生修改方面会非常快，只需要检测对象引用即可，而不用挨个的检测对象属性的更改④在渲染组件的时候尽可能的添加key ，这样Virtual DOM在对比时就会更容易发现哪里，哪里是修改元素，哪里是新插入的元素。</p>
+</li>
+<li><p>React中调用setState发生了什么</p>
+<p>答：①React将传入的参数与组件当前的状态合并，触发调和过程②调和过程后，React以相对高效的方式（相对遍历）根据新的状态构建React元素树（virtual dom）并且着手重新渲染整个UI③新旧元素树（virtual dom）比较差异地方，按需渲染。</p>
+</li>
+<li><p>什么情况下在React优先用Class Component而不是Function Component？</p>
+<p>答：在组件需要包含内部状态或者用到生命周期函数的时候用Class Component，其余时用Function Component。</p>
+</li>
+<li><p>React中的refs有什么作用，key又有什么作用？</p>
+<p>答：React用来提供我们安全访问dom元素或者某个组件实例的句柄。key用于React追踪哪些元素被修改、添加、移除的辅助操作。</p>
+</li>
+<li><p>React中createElement与cloneElement有什么不同</p>
+<p>答： createElement是JSX编译之后使用的创建React Element的函数，而cloneElement则是用于复制某个元素并传入新的props。</p>
+</li>
+<li><p>简述下React中的事件处理逻辑</p>
+<p>答：React 会将浏览器原生事件封装为合成事件传入设置的事件处理器中。这里的合成事件提供了与原生事件相同的接口，不过它们屏蔽了底层浏览器的细节差异，保证了行为的一致性。React 以单一事件监听器的方式将所有的事件发送到顶层进行处理，这样在更新 DOM 的时候就不需要考虑如何去处理附着在 DOM 上的事件监听器，打到优化性能的目的。</p>
+</li>
+<li><p>Webpack 热更新原理</p>
+<p>答：Webpack会与浏览器开启Websock通信，Webpack监听文件变化，如果变化了就发送一个新的文件hash,浏览器请求这个hash，服务器会返回新的hot-update.json（含有当次hash）与hot-update，然后更新文档。</p>
+</li>
+<li><p>Webpack  打包原理</p>
+<p>答：①从入口文件开始递归地建立一个依赖关系图② 通过loader把所有文件都转化成模块函数③根据依赖关系，按照配置文件把模块函数分组打包成若干个bundle。④通过script标签把打包的bundle注入到html中。</p>
+</li>
+<li><p>Webpack4 新特性</p>
+<p>答： ①简化配置 ②升级了unglify,支持 ES6语法。 ③环境不再支持node4.0</p>
+</li>
+<li><p>React16 新特性</p>
+<p>答：①添加类似try-catch的周期componentDidCatch(error, info)（它处理的仅仅是Render中的错误）②废弃componentWillReceiveProps更换为static getDerivedStateFromProps</p>
+</li>
+<li><p>Babel 原理</p>
+<p>答：①解析：将代码字符串解析成抽象语法树②变换：对抽象语法树进行变换操作③再建：根据变换后的抽象语法树再生成代码字符串。</p>
+</li>
+<li><p>Webpack文件过大怎么办</p>
+<p>答：①配置全局环境，设置环境为production和优化devtool的source-map②剥离CSS文件，单独打包③使用Uglify压缩④提取公共依赖</p>
+</li>
+<li><p>Webpack打包过慢</p>
+<p>答：可以webpack.DllPlugin。使用这个功能需要把打包过程分成两步：①打包ddl包②引用ddl包，打包业务代码</p>
+</li>
+</ol>
+<h2 id="网络知识"><a href="#网络知识" class="headerlink" title="网络知识"></a>网络知识</h2><ol>
+<li><p>部分地区用户反应网站很卡，请问有哪些可能性的原因，以及解决方法</p>
+<p> 答：分为两种网络问题，①客户网络问题，客户带宽小，下载资源速度慢②服务器网络问题，有以下几种可能：服务器受到DDoS等攻击，服务器超载等。还有局部网络问题，如北方网络访问南方网络③解决方法：服务器开启Gzip，代码压缩，使用CDN加速网络访问。</p>
+</li>
+<li><p>一个页面从输入 URL 到页面加载显示完成，这个过程中都发生了什么</p>
+<p> 答：百度一堆，<a href="http://dcison.top/2018/02/27/从输入网址到页面显示/" target="_blank" rel="external">我的回答</a></p>
+</li>
+<li><p>什么是SEO并且怎么优化</p>
+<p> 答：SEO（Search Engine Optimization）搜索引擎优化，是一种利用搜索引擎的搜索规则来提高网站在有关搜索引擎内的自然排名的方式。优化：①网址要有合理的URL规划②网页Title设置③meta标签设置④图片alt⑤最好不要使用iframe⑥语义化标签设置合理</p>
+</li>
+<li><p>HTTP status 301 与 302 的区别</p>
+<p> 答：301是永久性跳转，302为临时性跳转。</p>
+</li>
+<li><p>罗列出你所知道的所有 HTTP method</p>
+<p> 答：</p>
+<p> 100 continue：初始请求已连接，客户应请求剩余的其他部分；</p>
+<p> 101  Switching Protocols：服务器将遵循客户请求切换协议；</p>
+<p> 200 OK：一切正常；</p>
+<p> 201 Created：服务器已成功创建文档；</p>
+<p> 202 Accepted：已接受请求，但处理未完成；</p>
+<p> 301 Moved Permanently：永久性跳转；</p>
+<p> 302 Found：临时性跳转；</p>
+<p> 303 See Other：类似301/302，但重定向的目标必须用get请求，即使原来是post；</p>
+<p> 304 Not Modified：客户端缓存的文档发出一个请求，服务器告诉客户端，缓存没有改动可以继续使用；</p>
+<p> 400 Bad Request: 请求出现语法错误；</p>
+<p> 403 Forbidden：资源不可用（一般为权限问题）；</p>
+<p> 404 Not Found：资源找不到；</p>
+<p> 500 Internal Server Error ：服务器发生不可预料的情况，不能完成客户的请求；</p>
+<p> 501 Not Implemented：服务器不支持实现请求所需功能。</p>
+</li>
+<li><p>什么是CDN，有什么用</p>
+<p> 答：CDN（Content Delivery Network）内容分发网络，目的是解决因分布、带宽、服务器性能带来的访问延迟问题，适用于站点加速、点播、直播等场景。使用户可就近取得所需内容，解决 Internet网络拥挤的状况，提高用户访问网站的响应速度和成功率。</p>
+</li>
+<li><p>什么是跨域，跨域的方法有哪些</p>
+<p> 答：①首先得说同源策略，浏览器最重要的一个安全策略，同源指的是同域名，同端口，同协议。浏览器在执行JS脚本时，会检查这个脚本属于哪个页面，如果不是同源页面，就不会被执行。跨域简单来说就是绕过同源策略。②方法：<br> 1） JSONP：动态插入script标签，通过script标签引入一个js文件，这个js文件载入成功后会执行我们在url参数中指定的函数，并且会把我们需要的<code>json</code>数据作为参数传入。缺点是只支持GET请求，不能很容易确定JSONP请求状态，容易受到CSRF攻击。<br> 2） CORS（跨域资源共享）：通过设置<code>Access-Control-Allow-Origin</code>来进行的。如果浏览器检测到相应的设置，就可以允许<code>Ajax</code>进行跨域的访问。<br> 3） 图片ping或script标签跨域：图片ping常用于跟踪用户点击页面或动态广告曝光次数。 script标签可以得到从其他来源数据，这也是JSONP依赖的根据。缺点是只能发起GET请求。<br> 4）document.domian + iframe: 每个iframe都有包裹它的window，而这个window是top window的子窗口。contentWindow属性返回<code>&lt;iframe&gt;</code>元素的Window对象。可以使用这个Window对象来访问iframe的文档及其内部DOM。这种办法只能解决主域相同而二级域名不同的情况。<br> 5） window.name + window.postMessage()：HTML5新特性，可以用来向其他所有的 window 对象发送消息。注意的是必须要保证所有的脚本执行完才发送 MessageEvent，如果在函数执行的过程中调用了它，就会让后面的函数超时无法执行。<br> 6） 修改document.domain跨子域：在根域范围内，允许把domain属性的值设置为它的上一级域。<br> 7） WebSocket：是HTML5一种新的协议。它实现了浏览器与服务器全双工通信，同时允许跨域通讯。<br> 8） 代理：利用服务器端作一个代理跳板解决，如<br>DomainA客户端（浏览器） -&gt; DomainA服务器 -&gt; DomainB服务器 -&gt; DomainA客户端（浏览器）</p>
+</li>
+<li><p>XML与JSON的区别</p>
+<p>答：①数据体积方面：JSON相对于XML更小，传递速度更快②数据交互方面：JSON与JS更容易交互，更容易解析③数据描述方面：相对而言，XML描述的比JSON详细④速度方面：JSON速度远远快于XML</p>
+</li>
+<li><p>TCP 3次握手、四次挥手策略过程描述一下</p>
+<p> 答：<br> ①3次握手：<br> 1）客户端：在吗（发送SYN包到服务器）<br> 2）服务器端： 在的（接受SYN包，并返回一个SYN + ACK包）<br> 3）客户端：好，那我们来聊天吧（接受服务器端返回的包，并发送一个ACK包）<br> ②4次挥手：<br> 1）客户端：我们分手吧（发送一个FIN给服务器端，关闭了客户端到服务器端的数据传送）<br> 2）服务器端：好 （收到FIN，并返回ACK）<br> 3）服务器端：分吧（关闭服务器到客户端的通道，发送一个FIN包）<br> 4）客户端：再见了！（收到服务器端FIN，发送一个ACK确认）</p>
+</li>
+<li><p>TCP与UDP的区别</p>
+<p>答：①TCP（Transmission Control Protocol 传输控制协议）是一种面向连接的、可靠的、基于字节流的传输层通信协议，即在正式收发数据前，必须和对方建立可靠的连接。②UDP（User Datagram Protocol 用户数据报协议）是与TCP相对应的协议。它是面向非连接的协议，它不与对方建立连接，而是直接就把数据包发送过去！UDP适用于一次只传送少量数据、对可靠性要求不高的应用环境。</p>
+</li>
+<li><p>为什么https安全</p>
+<p>答：它利用SSL/TLS协议传输。它包含证书，卸载，流量转发，负载均衡，页面适配，浏览器适配，refer传递等。保障了传输过程的安全性。</p>
+</li>
+<li><p>说一下对websock的理解</p>
+<p>答：WebSocket是Web应用程序的传输协议，它提供了双向的，按序到达的数据流。他是一个Html5协议，WebSocket的连接是持久的，他通过在客户端和服务器之间保持双工连接，服务器的更新可以被及时推送给客户端，而不需要客户端以一定时间间隔去轮询。</p>
+</li>
+<li><p>CSP（内容安全策略是做什么用的）</p>
+<p>答：主要解决XSS攻击带来的问题，通过设置脚本来源白名单来防御XXS，浏览器只执行和渲染来自白名单的资源，而不是盲目信任服务器提供的所有内容。</p>
+</li>
+<li><p>什么是XSS，如何预防</p>
+<p>答：XSS晇站脚本注入，它指的是恶意攻击者往Web页面里插入恶意代码。当用户浏览该页之时，嵌入Web里面的代码会被运行，从而达到恶意攻击用户的特殊目的。XSS分为三类：分为反射型XSS，存储型XSS，DOMXSS。预防方法有：①关键字过滤，数据进行转义，尽可能减少直接输出HTML内容②对data的URL内容进行正则匹配。</p>
+</li>
+<li><p>什么是CSRF，如何预防</p>
+<p>答：CSRF全称晇站请求伪造，攻击者盗用用户身份，以用户身份完成恶意攻击，如以用户名义发送邮件，向银行请求付款账单等。攻击原理是当用户访问正常站点A后（A返回了Cookie），在未退出A站同时打开了恶意站点B，B利用A站点的Cookie以你的名义向A站点发起非法请求。预防方法：①漏洞页面添加验证码，手机短信等等验证手段②使用一次性Token③检测请求的访问来源，验证Refer④临时Cookie⑤session标记随机生成。</p>
+</li>
+<li><p>什么是注入（SQL）,如何预防</p>
+<p>答：简单来说就是利于SQL语句对数据库进行非法查询，更新等操作。预防方法：①参数化查询预处理②转义敏感字符③屏蔽出错信息（阻止攻击者知道结果）</p>
+</li>
+<li><p>一些常见的web攻击手段有哪些</p>
+<p>答： DDoS、上传文件攻击、重定向攻击、Cookie攻击、Http Heads攻击、CSRF攻击、XSS攻击、散列攻击、SQL攻击、缓冲区溢出攻击。</p>
+</li>
+<li><p>说下你对HTTP2.0的了解</p>
+<p>答：①HTTP2.0使用了多路复用的技术，做到同一个连接并发处理多个请求，而且并发请求的数量比HTTP1.1大了好几个数量级。②HTTP2.0使用HPACK算法对header的数据进行压缩，这样数据体积小了，会转成二进制传输，所以在网络上传输就会更快。③当我们对支持HTTP2.0的web server请求数据的时候，服务器会顺便把一些客户端需要的资源一起推送到客户端，免得客户端再次创建连接发送请求到服务器端获取。适合浏览器加载静态资源。</p>
+</li>
+<li><p>什么是DDoS，如何防御</p>
+<p>答：DDoS全称分布式拒绝服务攻击，原理是将多个计算机联合作为攻击平台，对一个或多个目标发起服务请求（其实是攻击），使目标站点无法正常工作。DDoS防御的方法：①利用网络设备设施保护网络资源，如：扩充带宽硬抗，使用硬件防火墙等②合理的网络架构布局提高网络负载能力③CDN流量清洗④分布式集群防御⑤过滤不使用的端口，限制特定流量。</p>
+</li>
+<li><p>负载均衡了解多少<br>答：①HTTP重定向，②DNS负载均衡，③反向代理④IP负载均衡⑤直接路由⑥IP隧道</p>
+</li>
+<li><p>OSI模型的优点</p>
+<p>答：①减轻问题的复杂程度，可以迅速定位故障层次②使相同层的网络设备可以互操作③便于研究和教学</p>
+</li>
+<li><p>TCP/IP模型与OSI模型的区别</p>
+<p>答：① TCP/IP模型是OSI模型的实体化②TCP/IP模型先有模型后有协议，OSI协议是先有协议后有模型③OSI适用于各种协议栈，TCP/IP只适用于TCP/IP网络。</p>
+</li>
+<li><p>路由器和交换机的区别</p>
+<p>答：①路由器位于网络层，交换机位于数据链路层②路由器根据IP地址转发，交换机根据MAC地址进行转发③交换机主要用于组建局域网，路由主要用于接入Internet，但也有局域网的功能。</p>
+</li>
+<li><p>CDN过程</p>
+<p>答：用户访问URL后，经过DNS系统解析后将域名的解析权交给CNAME指向的CDN专用DNS服务器，该服务把CDN全局负载均衡的设备IP返回给用户。用户向该IP发起请求，CDN全局负载均衡设备根据用户IP地址，以及用户请求的内容URL，选择一台用户所属区域的区域负载均衡设备，选取原则是，该服务器有用户需要的内容，且尚有服务能力，然后返回一台符合情况的设备IP地址告诉用户向这台设备发起请求。</p>
+</li>
+</ol>
+<hr>
+<h2 id="自用：关于微信小程序"><a href="#自用：关于微信小程序" class="headerlink" title="自用：关于微信小程序"></a>自用：关于微信小程序</h2><ol>
+<li><p>怎么封装小程序的数据请求？</p>
+<p>答：①将所有的接口放在同一的js文件中并导出②在app.js中创建封装请求数据的方法③在子页面调用封装的方法请求。</p>
+</li>
+<li><p>有哪些参数传值的方法？</p>
+<p> 答：①给WXML元素添加data-*属性，通过e.currentTarget.dataset获取②元素添加id，通过e.currentTarget.id获取id的值获取③在URL设定参数，通过navigator后onload获取。</p>
+</li>
+<li><p>使用过哪些方法提升小程序的应用速度？</p>
+<p> 答：①提高页面加载速度（使用cdn库等等）②减少默认data的大小③组件化方案④进行分包加载，让用户在需要时才加载</p>
+</li>
+<li><p>小程序生命周期</p>
+<p> 答：①onLoad:页面加载：一个页面只会调用一次②onshow:页面显示：每次打开页面都会调用一次③onReady: 页面初次渲染完成：一个页面只会调用一次，此时可以进行视图层的交互。④onHide：页面隐藏：当使用navigatorTo或底部tab切换时发生⑤onUnload:页面卸载：当redirectTo或navigateBack的时候调用。⑥初始化完成：onLaunch，仅在初始化发生一次。</p>
+</li>
+<li><p>微信小程序前后台区别</p>
+<p> 答：当用户点击左上角关闭，或者按了设备 Home 键离开微信，小程序并没有直接销毁，而是进入了后台；当再次进入微信或再次打开小程序，又会从后台进入前台。需要注意的是：只有当小程序进入后台一定时间，或者系统资源占用过高，才会被真正的销毁。</p>
+</li>
+</ol>
+<h2 id="项目"><a href="#项目" class="headerlink" title="项目"></a>项目</h2><p>微信小程序项目</p>
+<p>这个项目是基于微信小程序开发，做的内容是微课平台，可以简单地认为是慕课，完成的功能有播放视频，浏览文章（使用Wxparse渲染Markdown），答题，评论等等。我主要负责的任务是小程序前端代码的编写以及后台部分页面的编写。</p>
+<p>程序流程</p>
+<p>用户登陆后，向服务器发起请求，返回该用户的一些个人信息，包括用户点赞、收藏的文章、收藏的课程等。整个小程序共有5个主级页面，分别是主页 课程 文章 个人信息 搜索页。大题说下两个比较重要的页面：课程包含一系列的视频，采取监听视频播放完毕后自动跳转下一个视频的逻辑实现。文章采用Markdown格式，使用框架渲染。</p>
+<p>遇到的问题（难点）</p>
+<p>① onlaunch生命周期（小程序初始化）中发起了一次网络请求用于判断用户信息，本想着是初始化结束后，才进行下一个生命周期，结果在onload生命周期时（小程序加载页面，即下一个生命周期）请求结果未返回。</p>
+<p><strong>解决方法是</strong>：在onlaunch请求成功的函数里保存一个全局变量，然后在onload里通过settimeinterval判断该全局变量是否已经赋值，如果成功的话就进行onload里的各项操作，之前用过while true 但是在网络不通的情况下会内存泄露，所以后来选了用settimeinterval.可以设置超时。 现在查到别人的一种好方法是，通过在onlaunch函数里添加一个回调函数和一个全局变量，如果onload页面时，全局变量已经有值了则进行各种操作，如果没有的话则执行该回调。（未验证）。</p>
+<p>② 在评论页、搜索记录页等页面存在下拉加载更多的问题，在网络不太良好的情况下下拉只会让资源请求的更多加载更慢。</p>
+<p><strong>解决方法</strong>：采取的措施是添加loading图，提示用户等待，超时的话会报错提醒用户，其次是添加一个标记变量，用于判断第一次部分加载的资源是否加载完成，如果完成的话才可以进行下拉加载函数的操作。加载更多另外一个问题是如何判断下一次没资源，一开始我是不断的请求，如果返回的资源的data为空则不渲染，但是这种方法后来被同学否决了，因为这是一次无意义的请求，经过协商是他每次多返回一个内容值给我用于判断下一次是否还能继续请求，然后我在客户端去判断。</p>
+<p>老幼安全防范系统项目</p>
+<p>这个项目，通过用硬件读取用户所处的各种信息，存储到数据库，用软件（Android、Web）将信息展示给用户。但我只负责Web页面开发，完成Web前端，实现将数据渲染成图表，登陆验证功能，以及服务器端开发。由于我之前没有接触过服务器这一块，所以实际上是边学边写的，前前后后写了一个月，通过这个项目学到了一些服务器端的知识，起码懂得如何去交互了。</p>
+<p>前端页面是由React开发与 react-bootstrap  UI组件库开发。完成的功能有验证登陆信息，如果成功的话返回该用户的存储在数据库的知识，将该数据用eschart绘制折线图。遇到的问题（难点）</p>
+<p>遇到的问题（难点）</p>
+<p>①状态管理：在页面登陆之后，不知道验证我当前处于登陆状态，当时由于服务器端知识薄弱，不知道什么是session与cookie，当时管理的页面不多，所以使用的是sessionstorage，存储登陆是否成功，在需要验证用户登陆信息的页面下判断下sessionstorage里的值，如果值为真才发送请求到服务器端。经过这一段的时间之后，学习了下session的用法，可以通过在登录后，服务器创建一个session来做吧。</p>
+<p>②一开始前端页面与服务器端代码是分开写的，即前端页面与服务器页面处于两个端口，就遇到了常说的跨域问题，那时对跨域一窍不通，一开始通过设置cors解决了（在app.all设置access-control-allow）,但是有时候又不行，后来得到同学的告知，原因是localhost在跨域的时候不能等于127.0.0.1，之后一直通过127.0.0.1访问就好了。然而符合我这个项目的需求是把前端页面放入express的static文件中，做静态路由托管，跨域问题也不存在了。</p>
+<p>③关于数据库操作，连接的数据库是sqlserver，node关于它的连接插件太少信息，百度上的方法很多都失效，后来在npm搜旧包的时候意外找到了新的包解决。其次是数据库是每隔一秒更新一次，而需求要求我也要每秒更新一次，一开始担心sqlserver不能处理这种情况，后来经过查询可以做到，就放心的使用了轮询去访问服务器。经过几个月的学习来看回这个项目的话，如果仅从websock可以通过服务器主动发请求的特性来看的话，这个项目用websock来替代轮询更为适合。</p>
+<p>永⑦模拟器</p>
+<p>这个小项目是我为我玩的手游-永远的七日之都写的，这个游戏最吸引人的大部分人是它的剧情，因为剧情之中有很多选项，你每一个选项都可能会造成不同的结局。而且选项是不能回退的，所以即使网上有很多攻略，也有可能会因为渣操而导致整个游戏的结局出人意料。因此我写了这个模拟器。</p>
+<p>整个程序由React+react-bootstrap编写，主组件下主要由两个子组件：一个控制组件，一个记录组件，控制组件下还有一个跟游戏情报相关的情报组件。整个模拟器可以模拟剧情选项，以及游戏过程中发生的随机情报信息。为了防止泄露剧情故事信息，模拟器仅做计算功能。</p>
+<p>遇到的问题</p>
+<p>① 组件间通信问题，由于当初文件格局没有设计好，本来仅打算只有父子间通信，结果写到最后发现忘记了情报系统，造成了非父子间的通信，以前的解决办法是使用Pubsub.js订阅发布来管理非父子组件之间的通信，但是这个玩意体积太大，而且我就只调用了一次，使用它不是很好的选择。因为有同一个父组件管理，所以把需要通信的state放在父组件里，然后通过父子组件间的通信一层层的交互下去。但是这个也不是最好的方法，所以现在正在学习Redux，准备通过Redux重构该项目。</p>
+<p>② 由于那时对react的生命周期不太熟练，在componentWillUpdate里更新porps与state，造成了无限循环，后来查阅资料，通过在componentDidUpdate来调用父组件的更新函数更新props，依旧是不停的执行刷新操作，所以还需要通过加判断状态让它只更新一次。</p>
+<hr>
+<h2 id="手写代码"><a href="#手写代码" class="headerlink" title="手写代码"></a>手写代码</h2><p>冒泡<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">function  sort1(str) &#123; //冒泡排序</div><div class="line">	for (let  i  =  1; i  &lt;  str.length; i++) &#123;	</div><div class="line">		for (let  j  =  0; j  &lt;  str.length  -  i; j++) &#123;		</div><div class="line">			if (str[j] &gt;  str[j  +  1]) &#123;			</div><div class="line">				tmp  =  str[j  +  1]				</div><div class="line">				str[j  +  1] =  str[j]				</div><div class="line">				str[j] =  tmp	</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">return  str</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>选择<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function  sort2(str) &#123; //选择排序</div><div class="line">	for (let  i  =  0; i  &lt;  str.length; i++) &#123;	</div><div class="line">		let  minIndex  =  i	</div><div class="line">		for (let  j  =  i  +  1; j  &lt;  str.length; j++) &#123;	</div><div class="line">			if (str[j] &lt;  str[minIndex]) &#123;		</div><div class="line">				minIndex  =  j	</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		temp  =  str[i]</div><div class="line">		str[i] =  str[minIndex]</div><div class="line">		str[minIndex] =  temp</div><div class="line">	&#125;</div><div class="line">	return  str</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>快排<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">function  sort3(str) &#123; //快排</div><div class="line">	if (str.length  &lt;=  1) &#123;	</div><div class="line">		return  str	</div><div class="line">	&#125;</div><div class="line">	let  index  =  Math.floor(str.length  /  2),</div><div class="line">		value  =  str.splice(index,1),</div><div class="line">		left  = [],</div><div class="line">		right  = []</div><div class="line">	for (let  i  =  0;i&lt;str.length;i++)&#123;</div><div class="line">		if(str[i] &lt;  value)&#123;</div><div class="line">			left.push(str[i])</div><div class="line">		&#125;else&#123;</div><div class="line">			right.push(str[i])</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return  sort3(left).concat(value,sort3(right))</div><div class="line">&#125;</div><div class="line"></div><div class="line">快排另一种（划分）</div><div class="line">function  partition(array, left, right) &#123;</div><div class="line">	let  k  =  array[left],</div><div class="line">		i  =  left,</div><div class="line">		j  =  right,</div><div class="line">		tmp  =  null;</div><div class="line">	while (j  &gt;  i) &#123;</div><div class="line">		while (array[j] &gt;  k  &amp;&amp;  j  &gt;  i) &#123;</div><div class="line">			j--;</div><div class="line">		&#125;</div><div class="line">		if (j  &gt;  i) &#123;</div><div class="line">			array[i] =  array[j];</div><div class="line">			i++;</div><div class="line">		&#125;</div><div class="line">		while (array[i] &lt;  k  &amp;&amp;  j  &gt;  i) &#123;</div><div class="line">			i++;</div><div class="line">		&#125;</div><div class="line">		if (j  &gt;  i) &#123;</div><div class="line">			array[j] =  array[i];</div><div class="line">			j--;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	array[j] =  k;</div><div class="line">	return  j;</div><div class="line">&#125;</div><div class="line">function  sort3(str, start, end, k) &#123; </div><div class="line">		if (start &lt; end）&#123;</div><div class="line">			let  i  =  partition(str,start,end)</div><div class="line">			if (i  ==  k  -  1) &#123;</div><div class="line">				return  str[k  -  1];</div><div class="line">			&#125; else  if (i  &gt;  k  -  1) &#123;</div><div class="line">				return  sort3(str, start, i  -  1, k);</div><div class="line">			&#125; else  if (i  &lt;  k  -  1) &#123;</div><div class="line">				return  sort3(str, i  +  1, end, k);</div><div class="line">			&#125;</div><div class="line">		&#125;		</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>归并排序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">function  merge(left,right)&#123;</div><div class="line">	let  result  = []	</div><div class="line">	while(left.length  &gt;  0  &amp;&amp;  right.length  &gt;  0)&#123;	</div><div class="line">		if (left[0] &lt;  right[0])&#123;	</div><div class="line">			result.push(left.shift())	</div><div class="line">		&#125;else&#123;	</div><div class="line">			result.push(right.shift())</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return  result.concat(left).concat(right)</div><div class="line">&#125;</div><div class="line">function  sort4(str)&#123;// 归并排序</div><div class="line">	if(str.length  ==  1)&#123;</div><div class="line">		return  str</div><div class="line">	&#125;</div><div class="line">	let  mid  =  Math.floor(str.length  /  2),</div><div class="line">		left  =  str.slice(0,mid),</div><div class="line">		right  =  str.slice(mid)</div><div class="line">	return  merge(sort4(left),sort4(right))</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<table>
+<thead>
+<tr>
+<th>各类算法复杂度</th>
+<th>最好</th>
+<th>最坏</th>
+<th>平均</th>
+<th>空间</th>
+<th>稳定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>插入排序</td>
+<td>O(n)</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>O(1)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>希尔排序</td>
+<td>O(n)</td>
+<td>O(n^2)</td>
+<td>O(n^1.3)</td>
+<td>O(1)</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>选择排序</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>O(1)</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>堆排序</td>
+<td>O(n*log2n)</td>
+<td>O(n*log2n)</td>
+<td>O(n*log2n)</td>
+<td>O(1)</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>快排</td>
+<td>O(n*log2n)</td>
+<td>O(n^2)</td>
+<td>O(n*log2n)</td>
+<td>O(log2n)</td>
+<td>不稳定</td>
+</tr>
+<tr>
+<td>冒泡</td>
+<td>O(n)</td>
+<td>O(n^2)</td>
+<td>O(n^2)</td>
+<td>O(1)</td>
+<td>稳定</td>
+</tr>
+<tr>
+<td>归并排序</td>
+<td>O(n*log2n)</td>
+<td>O(n*log2n)</td>
+<td>O(n*log2n)</td>
+<td>O(1)</td>
+<td>稳定</td>
+</tr>
+</tbody>
+</table>
+<p>手写一个bind函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">if (typeof Function.prototype.bind === &quot;undefined&quot;)&#123; </div><div class="line">	Function.prototype.bind = function (thisArgs)&#123; </div><div class="line">		var fn = this, </div><div class="line">			slice = Array.prototype.slice, </div><div class="line">			args = slice.call(arguments, 1); </div><div class="line">		return function ()&#123; </div><div class="line">			return fn.apply(thisArgs, args.concat(slice.call(arguments))); </div><div class="line">		&#125; </div><div class="line">	&#125; </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面经/" rel="tag"># 面经</a>
+          
+            <a href="/tags/春招/" rel="tag"># 春招</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/10/2018春招闯关记/" rel="next" title="2018春招闯关记">
+                <i class="fa fa-chevron-left"></i> 2018春招闯关记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://wx2.sinaimg.cn/large/006m1w1Agy1fitototolwj30dw0dw0we.jpg"
+                alt="Dcison" />
+            
+              <p class="site-author-name" itemprop="name">Dcison</p>
+              <p class="site-description motion-element" itemprop="description">写作前端，读取全栈</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/dcison" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:dcison@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://priscillajrlm.lofter.com" title="剑若流芒" target="_blank">剑若流芒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://mzi.red/" title="MZI" target="_blank">MZI</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://pipecat.github.io" title="PIPECAT" target="_blank">PIPECAT</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML"><span class="nav-number">1.</span> <span class="nav-text">HTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS"><span class="nav-number">2.</span> <span class="nav-text">CSS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript"><span class="nav-number">3.</span> <span class="nav-text">JavaScript</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前端工具"><span class="nav-number">4.</span> <span class="nav-text">前端工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络知识"><span class="nav-number">5.</span> <span class="nav-text">网络知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#自用：关于微信小程序"><span class="nav-number">6.</span> <span class="nav-text">自用：关于微信小程序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#项目"><span class="nav-number">7.</span> <span class="nav-text">项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#手写代码"><span class="nav-number">8.</span> <span class="nav-text">手写代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dcison</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+  <div class="footer-custom"><a target="_blank" href="https://github.com/dcison">My GitHub Pages</a></div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'mfv0H8MqUH4bHNN2xMiHX8xo-gzGzoHsz',
+        appKey: '0zGrzEWAHR0vt5xd3R6ddwgu',
+        placeholder: '_(:з」∠)_来说点啥吧',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'5' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
