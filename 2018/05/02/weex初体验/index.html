@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+  <meta name="google-site-verification" content="gxD7nqeI5p9gsVjlAaGWlLNoJBYcOrNikNnQGKuVE9s" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="http://wx2.sinaimg.cn/large/006m1w1Agy1fitototolwj30dw0dw0we.jpg?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="http://wx2.sinaimg.cn/large/006m1w1Agy1fitototolwj30dw0dw0we.jpg?v=5.1.4">
+
+
+
+
+
+
+  <meta name="keywords" content="WEEX,Android," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Weex开发Android体验（基于Vue)Weex环境搭建 首先搭配的是Weex环境全家桶 1npm install weex-toolkit -g  启动项目，并安装好依赖后，运行web端体验 1npm start   这里遇到第一个坑是：显示应用运行成功，但是访问对应URL无对应文件，导致404错误，采取的谜之解决方法是：在搭建weex create 时版本选择lts，之后npm start">
+<meta name="keywords" content="WEEX,Android">
+<meta property="og:type" content="article">
+<meta property="og:title" content="weex初体验">
+<meta property="og:url" content="http://www.dcison.top/2018/05/02/weex初体验/index.html">
+<meta property="og:site_name" content="Dcison&#39;s Blog">
+<meta property="og:description" content="Weex开发Android体验（基于Vue)Weex环境搭建 首先搭配的是Weex环境全家桶 1npm install weex-toolkit -g  启动项目，并安装好依赖后，运行web端体验 1npm start   这里遇到第一个坑是：显示应用运行成功，但是访问对应URL无对应文件，导致404错误，采取的谜之解决方法是：在搭建weex create 时版本选择lts，之后npm start">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-20T07:39:53.821Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="weex初体验">
+<meta name="twitter:description" content="Weex开发Android体验（基于Vue)Weex环境搭建 首先搭配的是Weex环境全家桶 1npm install weex-toolkit -g  启动项目，并安装好依赖后，运行web端体验 1npm start   这里遇到第一个坑是：显示应用运行成功，但是访问对应URL无对应文件，导致404错误，采取的谜之解决方法是：在搭建weex create 时版本选择lts，之后npm start">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://www.dcison.top/2018/05/02/weex初体验/"/>
+
+
+
+
+
+  <title>weex初体验 | Dcison's Blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Dcison's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">一个安全转前端的小白</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-sitemap">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br />
+            
+            站点地图
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.dcison.top/2018/05/02/weex初体验/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Dcison">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="http://wx2.sinaimg.cn/large/006m1w1Agy1fitototolwj30dw0dw0we.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Dcison's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">weex初体验</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T20:30:47+08:00">
+                2018-05-02
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术分享/" itemprop="url" rel="index">
+                    <span itemprop="name">技术分享</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/02/weex初体验/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/02/weex初体验/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2018/05/02/weex初体验/" class="leancloud_visitors" data-flag-title="weex初体验">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Weex开发Android体验（基于Vue"><a href="#Weex开发Android体验（基于Vue" class="headerlink" title="Weex开发Android体验（基于Vue)"></a>Weex开发Android体验（基于Vue)</h1><h2 id="Weex环境搭建"><a href="#Weex环境搭建" class="headerlink" title="Weex环境搭建"></a>Weex环境搭建</h2><ol>
+<li><p>首先搭配的是Weex环境全家桶</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install weex-toolkit -g</div></pre></td></tr></table></figure>
+</li>
+<li><p>启动项目，并安装好依赖后，运行web端体验</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm start</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这里遇到第一个坑是：显示应用运行成功，但是访问对应URL无对应文件，导致404错误，采取的谜之解决方法是：在搭建weex create 时版本选择lts，之后npm start正常显示。</p>
+<ol>
+<li>搭建Android环境<br>Android SDK 搭建3天，其中痛苦大家自己去体会吧，常言说的好，环境搭配三小时，代码不足5分钟，外加吹逼半小时。</li>
+<li><p>Weex 搭建Android</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">weex playweex platform add android</div></pre></td></tr></table></figure>
+</li>
+<li><p>Weex AS 模拟器运行<br>开启AS模拟器（SDK基于26）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">weex run android</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>上述环境将近一周（在有梯子的情况），配置完后终于可以好好写代码了（后来发现是我想多了）<br><a id="more"></a></p>
+<h2 id="使用过程"><a href="#使用过程" class="headerlink" title="使用过程"></a>使用过程</h2><ol>
+<li>Weex UI 配合使用<br><a href="[https://alibaba.github.io/weex-ui/#/cn/">官方手册</a><br>不得不说，这手册写的都比Weex开发手册好，Weex手册新旧内容掺杂，一个字：坑。</li>
+<li>扩展插件：<br><a href="http://natjs.com/#/zh-cn/" target="_blank" rel="external">Nat</a><br>目前使用的是image-picker与upload，做的功能是获取手机里图片并上传到服务器，通过该插件就不需去写Android了（好评，不然我还不如直接去写Android）</li>
+<li>路由<ol>
+<li>router.js配置</li>
+<li>entry.js (入口文件引入)</li>
+<li>index.vue中就一个路由展示页面</li>
+<li>在子页面使用子路由，否则在子页面中虽然显示URL跳转成功但是无页面显示</li>
+<li>Android按返回键的问题至今没解决（暂时只知道通过Android解决）</li>
+</ol>
+</li>
+<li>自己采的巨坑(待更)<ol>
+<li>Android端只支持Flex布局，且flex-direction:column,web端为row。。。</li>
+<li>Android端无display属性，因此不能用display:none 属性导致的v-show也无法使用，只能使用v-if/opacity/通过定位，把各种暂时不要显示的内容丢到视图以外（只能是通过定死过长的宽度实现，因为无法改变层叠样式）</li>
+<li>Weex 中的class 只能是单属性，必须逐条写。。。</li>
+<li>只有class，没有id</li>
+<li>weex 不支持简写，如margin: 0 auto;</li>
+<li>加载本地图片，这里我采用的是本地搭建的静态资源服务器（一共两个，一个专用于返回图片/视频，一个用于反应用户逻辑操作，如登陆，注册等。）</li>
+<li>显示文本必须用<text></text>套着,且字体大小只对<text></text>有用，即你给<text></text>的父元素写font-size也没用。</li>
+<li>单位只支持px</li>
+<li>调试工具只支持Mac。。。。。（这个我真的想骂娘）只能是在web端console.log调试，然后又跑到Android测试，浪费一堆时间。</li>
+<li>没有单向框，要么用WeexUI，要么用Weex自带的PICKER，这玩意又不支持Web，手册写的Web搭配写的不知道懵逼，不知道如何配置（是我太菜了)</li>
+<li>storage获取中是异步的<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var flag  = null;</div><div class="line">storage.getItem(&quot;token&quot;, e  =&gt; &#123;</div><div class="line">if (e.result  ==  &quot;success&quot;  &amp;&amp;  e.data  &amp;&amp;  e.data  !==  &quot;no&quot;)&#123;</div><div class="line">	flag = true;</div><div class="line">&#125; </div><div class="line">&#125;);</div><div class="line">if (flag)&#123;</div><div class="line">	//do something</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+</ol>
+<p>如果你这么写，有可能会炸，因为异步原因，你执行到if(flag)的时候，flag还没有被成功赋值true<br>所以得这么改<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">storage.getItem(&quot;token&quot;, e  =&gt; &#123;</div><div class="line">if (e.result  ==  &quot;success&quot;  &amp;&amp;  e.data  &amp;&amp;  e.data  !==  &quot;no&quot;)&#123;</div><div class="line">	flag = true;//do something</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<pre><code>12.  android 默认超出的内容隐藏（还没找到解决方法）
+13. 貌似移动端无cookie概念？采用token验证
+14. weex build android 后导出的未加证书的app,需要手动加证书
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 生成签名文件</div><div class="line">keytool -genkey -alias runan.keystore -keyalg RSA -validity 1000 -keystore runan.keystore</div><div class="line">// 开始签名</div><div class="line">jarsigner -verbose -keystore runan.keystore -signedjar runan.apk app-release-unsigned.apk runan.keystore</div></pre></td></tr></table></figure>
+<pre><code>15. image必须设置宽高，否则不显示。
+16. stream.fetch 不支持delete....支持GET，POST，PUT
+</code></pre><hr>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>Weex口号喊得很响，当初也是在D2听到它的口号：一次编写，处处运行。听到之后，心想666，卧槽，以后前端又多了个利器了。写了接近一个月的weex 之后。。。心中万千草泥马，官方手册不完善，默认你都会，学习整个weex的过程我感觉都能去学Android了，用Android写功能起码稳定很多。现在Weex还有些原生功能不支持（虽然我也不用）。总的来说，Weex现在虽然是1.，但是感觉它还是’玩具’，真要写项目的话，感觉还需等成熟点，或者阿里那边有Weex的框架还未开源，比如今天才知道的BindingX。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/WEEX/" rel="tag"># WEEX</a>
+          
+            <a href="/tags/Android/" rel="tag"># Android</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/20/谈谈原型链、原型、继承、执行上下文及作用域链的关系/" rel="next" title="谈谈原型链、原型、继承、执行上下文及作用域链的关系">
+                <i class="fa fa-chevron-left"></i> 谈谈原型链、原型、继承、执行上下文及作用域链的关系
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/10/2018春招闯关记/" rel="prev" title="2018春招闯关记">
+                2018春招闯关记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="http://wx2.sinaimg.cn/large/006m1w1Agy1fitototolwj30dw0dw0we.jpg"
+                alt="Dcison" />
+            
+              <p class="site-author-name" itemprop="name">Dcison</p>
+              <p class="site-description motion-element" itemprop="description">写作前端，读作全栈</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">27</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/dcison" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:dcison@hotmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://priscillajrlm.lofter.com" title="剑若流芒" target="_blank">剑若流芒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://mzi.red/" title="MZI" target="_blank">MZI</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://pipecat.github.io" title="PIPECAT" target="_blank">PIPECAT</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Weex开发Android体验（基于Vue"><span class="nav-number">1.</span> <span class="nav-text">Weex开发Android体验（基于Vue)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Weex环境搭建"><span class="nav-number">1.1.</span> <span class="nav-text">Weex环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用过程"><span class="nav-number">1.2.</span> <span class="nav-text">使用过程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.3.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Dcison</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Gemini</a> v5.1.4</div>
+
+
+
+  <div class="footer-custom"><a target="_blank" href="https://github.com/dcison">My GitHub Pages</a></div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'mfv0H8MqUH4bHNN2xMiHX8xo-gzGzoHsz',
+        appKey: '0zGrzEWAHR0vt5xd3R6ddwgu',
+        placeholder: '_(:з」∠)_来说点啥吧',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'5' || 10,
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("mfv0H8MqUH4bHNN2xMiHX8xo-gzGzoHsz", "0zGrzEWAHR0vt5xd3R6ddwgu");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
