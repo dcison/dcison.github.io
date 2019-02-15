@@ -1,8 +1,8 @@
 ---
 title: 谈谈JS中的~
 date: 2019-01-25 21:01:24
-tags:
-categories:
+tags: [js]
+categories: 技术分享
 ---
 
 # 谈谈JS中的~
